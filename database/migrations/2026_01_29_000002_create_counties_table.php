@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('counties', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('region_id')->constrained('regions')->cascadeOnDelete();
+            $table->unsignedInteger('region_code'); // official region code
             $table->string('name');
-            $table->integer('iebc_code')->nullable();
+            $table->integer('iebc_code')->unique(); // official IEBC code
             $table->boolean('active')->default(true);
+
+            // foreign key explicitly pointing to regions.region_code
+            $table->foreign('region_code')->references('region_code')->on('regions')->cascadeOnDelete();
         });
+
     }
 
     /**

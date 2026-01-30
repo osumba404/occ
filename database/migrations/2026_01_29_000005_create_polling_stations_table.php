@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('polling_stations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('ward_id')->constrained('wards')->cascadeOnDelete();
+            $table->foreignId('iebc_code')->constrained('wards')->cascadeOnDelete();
             $table->string('name');
-            $table->integer('iebc_code')->nullable();
+            $table->integer('iebc_code');
             $table->boolean('active')->default(true);
             $table->timestamp('last_verified_at')->nullable();
         });

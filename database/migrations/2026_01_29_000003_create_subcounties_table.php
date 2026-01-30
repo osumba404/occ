@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('subcounties', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('county_id')->constrained('counties')->cascadeOnDelete();
+            $table->unsignedInteger('county_code'); // reference county IEBC code
             $table->string('name');
-            $table->integer('iebc_code')->nullable();
+            $table->integer('iebc_code')->unique(); // official subcounty code
             $table->boolean('active')->default(true);
+
+            // foreign key explicitly pointing to counties.iebc_code
+            $table->foreign('county_code')->references('iebc_code')->on('counties')->cascadeOnDelete();
         });
+
     }
 
     /**
