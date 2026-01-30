@@ -8,6 +8,10 @@ Route::get('/', function () {
 
 use App\Http\Controllers\AuthController;
 
+Route::get('/membership', function () {
+    return view('membership');
+})->name('membership');
+
 Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 
