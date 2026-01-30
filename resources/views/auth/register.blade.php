@@ -26,17 +26,17 @@
 </head>
 <body class="bg-gradient-to-br from-gray-200 via-gray-300 to-gray-400 min-h-screen">
     <!-- ODM Logo at Top Center -->
-    <div class="pt-8 pb-4">
+    <div class="pt-6 sm:pt-8 pb-4">
         <div class="flex justify-center">
-            <img src="{{ asset('images/odmlogo.png') }}" alt="ODM Logo" class="h-16 w-auto">
+            <img src="{{ asset('images/odmlogo.png') }}" alt="ODM Logo" class="h-12 sm:h-16 w-auto">
         </div>
     </div>
     
     <!-- Wide Rectangular Form -->
     <div class="flex-grow flex items-center justify-center px-4 sm:px-6 lg:px-8 pb-8">
-        <div class="w-full max-w-4xl space-y-8 bg-white p-8 rounded-lg shadow">
+        <div class="w-full max-w-4xl space-y-6 sm:space-y-8 bg-white p-4 sm:p-6 lg:p-8 rounded-lg shadow">
             <div>
-                <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+                <h2 class="mt-6 text-center text-2xl sm:text-3xl font-extrabold text-gray-900">
                     Join the Movement
                 </h2>
                 <p class="mt-2 text-center text-sm text-gray-600">
@@ -45,7 +45,7 @@
             </div>
             <form class="mt-8 space-y-6" action="{{ route('register') }}" method="POST">
                 @csrf
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div class="mb-4">
                         <label for="phone_number" class="block text-sm font-medium text-gray-700">Phone Number</label>
                         <input id="phone_number" name="phone_number" type="text" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm" placeholder="Phone Number">
@@ -97,7 +97,7 @@
                 @endif
 
                 <div class="flex justify-center">
-                    <button type="submit" class="px-8 py-3 border border-transparent text-base font-medium rounded-md text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500" style="background-color: #fb923c;">
+                    <button type="submit" class="px-6 sm:px-8 py-3 border border-transparent text-base font-medium rounded-md text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500" style="background-color: #fb923c;">
                         Register
                     </button>
                 </div>
