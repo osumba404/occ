@@ -283,7 +283,7 @@ VALUES
 (NULL, 'KONGONI TVC', 'KONGONI TECHNICAL AND VOCATIONAL COLLEGE', 'College', 'Public', 'Ministry of Education', 'KAKAMEGA COUNTY'),
 (NULL, 'KONOIN TTI', 'KONOIN TECHNICAL TRAINING INSTITUTE', 'College', 'Public', 'Ministry of Education', 'BOMET COUNTY'),
 (NULL, 'KOSHIN TTI', 'KOSHIN TECHNICAL TRAINING INSTITUTE', 'College', 'Public', 'Ministry of Education', 'UASIN GISHU COUNTY'),
-(NULL, 'KUCCPS TVET', 'KUCCPS TVET', '', '', '', 'COUNTY'),
+(NULL, 'KUCCPS TVET', 'KUCCPS TVET', 'College', 'Public', 'Ministry of Education', 'NAIROBI COUNTY'),
 (NULL, 'KWALE TTC', 'KWALE TEACHERS TRAINING COLLEGE', 'College', 'Public', 'Ministry of Education', 'KWALE COUNTY'),
 (NULL, 'LAGDERA TVC', 'LAGDERA TECHNICAL AND VOCATIONAL COLLEGE', 'College', 'Public', 'Ministry of Education', 'GARISSA COUNTY'),
 (NULL, 'LAIKIPIA EAST TVC', 'LAIKIPIA EAST TECHNICAL AND VOCATIONAL COLLEGE', 'College', 'Public', 'Ministry of Education', 'LAIKIPIA COUNTY'),

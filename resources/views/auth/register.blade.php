@@ -47,6 +47,10 @@
                 @csrf
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div class="mb-4">
+                        <label for="national_id" class="block text-sm font-medium text-gray-700">National ID</label>
+                        <input id="national_id" name="national_id" type="text" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm" placeholder="National ID Number">
+                    </div>
+                    <div class="mb-4">
                         <label for="phone_number" class="block text-sm font-medium text-gray-700">Phone Number</label>
                         <input id="phone_number" name="phone_number" type="text" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm" placeholder="Phone Number">
                     </div>
@@ -68,13 +72,35 @@
                         </select>
                     </div>
                     <div class="mb-4">
-                        <label for="polling_station_id" class="block text-sm font-medium text-gray-700">Polling Station</label>
-                        <select id="polling_station_id" name="polling_station_id" required class="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm">
-                            <option value="">Select Polling Station</option>
-                            @foreach($pollingStations as $station)
-                                <option value="{{ $station->id }}">{{ $station->name }}</option>
+                        <label for="region_id" class="block text-sm font-medium text-gray-700">Region</label>
+                        <select id="region_id" name="region_id" required class="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm">
+                            <option value="">Select Region</option>
+                            @foreach($regions as $region)
+                                <option value="{{ $region->id }}">{{ $region->name }}</option>
                             @endforeach
                         </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="county_id" class="block text-sm font-medium text-gray-700">County</label>
+                        <select id="county_id" name="county_id" required class="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm" disabled>
+                            <option value="">Select County</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="subcounty_id" class="block text-sm font-medium text-gray-700">Constituency (Sub-county)</label>
+                        <select id="subcounty_id" name="subcounty_id" required class="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm" disabled>
+                            <option value="">Select Constituency</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="ward_id" class="block text-sm font-medium text-gray-700">Ward</label>
+                        <select id="ward_id" name="ward_id" required class="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm" disabled>
+                            <option value="">Select Ward</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="polling_station_name" class="block text-sm font-medium text-gray-700">Polling Station</label>
+                        <input id="polling_station_name" name="polling_station_name" type="text" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm" placeholder="Enter your polling station name">
                     </div>
                     <div class="mb-4">
                         <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
@@ -110,5 +136,83 @@
             </form>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const regionSelect = document.getElementById('region_id');
+            const countySelect = document.getElementById('county_id');
+            const subcountySelect = document.getElementById('subcounty_id');
+            const wardSelect = document.getElementById('ward_id');
+
+            // Region change handler
+            regionSelect.addEventListener('change', function() {
+                const regionId = this.value;
+                countySelect.innerHTML = '<option value="">Select County</option>';
+                countySelect.disabled = !regionId;
+                subcountySelect.innerHTML = '<option value="">Select Constituency</option>';
+                subcountySelect.disabled = true;
+                wardSelect.innerHTML = '<option value="">Select Ward</option>';
+                wardSelect.disabled = true;
+
+                if (regionId) {
+                    fetch(`/api/counties/${regionId}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            data.forEach(county => {
+                                const option = document.createElement('option');
+                                option.value = county.iebc_code;
+                                option.textContent = county.name;
+                                countySelect.appendChild(option);
+                            });
+                        })
+                        .catch(error => console.error('Error loading counties:', error));
+                }
+            });
+
+            // County change handler
+            countySelect.addEventListener('change', function() {
+                const countyId = this.value;
+                subcountySelect.innerHTML = '<option value="">Select Constituency</option>';
+                subcountySelect.disabled = !countyId;
+                wardSelect.innerHTML = '<option value="">Select Ward</option>';
+                wardSelect.disabled = true;
+
+                if (countyId) {
+                    fetch(`/api/subcounties/${countyId}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            data.forEach(subcounty => {
+                                const option = document.createElement('option');
+                                option.value = subcounty.iebc_code;
+                                option.textContent = subcounty.name;
+                                subcountySelect.appendChild(option);
+                            });
+                        })
+                        .catch(error => console.error('Error loading subcounties:', error));
+                }
+            });
+
+            // Subcounty change handler
+            subcountySelect.addEventListener('change', function() {
+                const subcountyId = this.value;
+                wardSelect.innerHTML = '<option value="">Select Ward</option>';
+                wardSelect.disabled = !subcountyId;
+
+                if (subcountyId) {
+                    fetch(`/api/wards/${subcountyId}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            data.forEach(ward => {
+                                const option = document.createElement('option');
+                                option.value = ward.iebc_code;
+                                option.textContent = ward.name;
+                                wardSelect.appendChild(option);
+                            });
+                        })
+                        .catch(error => console.error('Error loading wards:', error));
+                }
+            });
+        });
+    </script>
 </body>
 </html>

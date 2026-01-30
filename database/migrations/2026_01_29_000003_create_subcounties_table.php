@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedInteger('county_code'); // reference county IEBC code
             $table->string('name');
-            $table->integer('iebc_code')->unique(); // official subcounty code
+            $table->unsignedInteger('iebc_code')->unique(); // official subcounty code
             $table->boolean('active')->default(true);
 
             // foreign key explicitly pointing to counties.iebc_code

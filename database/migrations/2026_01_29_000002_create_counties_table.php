@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedInteger('region_code'); // official region code
             $table->string('name');
-            $table->integer('iebc_code')->unique(); // official IEBC code
+            $table->unsignedInteger('iebc_code')->unique(); // official IEBC code
             $table->boolean('active')->default(true);
 
             // foreign key explicitly pointing to regions.region_code
