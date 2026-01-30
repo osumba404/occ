@@ -1,3 +1,4 @@
+
 INSERT INTO institutions 
 (`kuccps_code`, `institution_key`, `name`, `category`, `institution_type`, `parent_ministry`, `location`)
 VALUES
