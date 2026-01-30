@@ -40,7 +40,7 @@
                     Join the Movement
                 </h2>
                 <p class="mt-2 text-center text-sm text-gray-600">
-                    Register for ODM Comrades Chapter
+                    To become ODM Comrades Chapter Member
                 </p>
             </div>
             <form class="mt-8 space-y-6" action="{{ route('register') }}" method="POST">
