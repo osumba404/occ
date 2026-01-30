@@ -167,10 +167,10 @@
                     <p class="text-center text-gray-600 mb-8">Celebrating two decades of democratic leadership and service to Kenyans</p>
                     
                     <!-- Filter Buttons -->
-                    <div class="flex justify-center mb-8 space-x-4">
-                        <button class="filter-btn px-6 py-2 rounded-full bg-orange-500 text-white font-medium transition-colors duration-300" data-filter="all">All Photos</button>
-                        <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition-colors duration-300" data-filter="celebrations">Celebrations</button>
-                        <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition-colors duration-300" data-filter="leadership">Leadership</button>
+                    <div class="flex flex-wrap justify-center mb-8 gap-2 sm:gap-4">
+                        <button class="filter-btn px-4 sm:px-6 py-2 rounded-full bg-orange-500 text-white font-medium text-sm sm:text-base transition-colors duration-300 whitespace-nowrap" data-filter="all">All Photos</button>
+                        <button class="filter-btn px-4 sm:px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-medium text-sm sm:text-base hover:bg-gray-300 transition-colors duration-300 whitespace-nowrap" data-filter="celebrations">Celebrations</button>
+                        <button class="filter-btn px-4 sm:px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-medium text-sm sm:text-base hover:bg-gray-300 transition-colors duration-300 whitespace-nowrap" data-filter="leadership">Leadership</button>
                     </div>
                     
                     <!-- Modern Masonry Gallery -->
@@ -293,10 +293,10 @@
                     <p class="text-center text-gray-600 mb-8">Multimedia University - November 7, 2025</p>
                     
                     <!-- Filter Buttons -->
-                    <div class="flex justify-center mb-8 space-x-4">
-                        <button class="campus-filter-btn px-6 py-2 rounded-full bg-orange-500 text-white font-medium transition-colors duration-300" data-filter="all">All Photos</button>
-                        <button class="campus-filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition-colors duration-300" data-filter="engagement">Engagement</button>
-                        <button class="campus-filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition-colors duration-300" data-filter="tournament">Tournament</button>
+                    <div class="flex flex-wrap justify-center mb-8 gap-2 sm:gap-4">
+                        <button class="campus-filter-btn px-4 sm:px-6 py-2 rounded-full bg-orange-500 text-white font-medium text-sm sm:text-base transition-colors duration-300 whitespace-nowrap" data-filter="all">All Photos</button>
+                        <button class="campus-filter-btn px-4 sm:px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-medium text-sm sm:text-base hover:bg-gray-300 transition-colors duration-300 whitespace-nowrap" data-filter="engagement">Engagement</button>
+                        <button class="campus-filter-btn px-4 sm:px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-medium text-sm sm:text-base hover:bg-gray-300 transition-colors duration-300 whitespace-nowrap" data-filter="tournament">Tournament</button>
                     </div>
                     
                     <!-- Modern Masonry Gallery -->
@@ -740,30 +740,38 @@
             /* Masonry Gallery Layout */
             .masonry-gallery {
                 column-count: 1;
-                column-gap: 1.5rem;
+                column-gap: 1rem;
+                width: 100%;
+                max-width: 100%;
+                overflow: hidden;
+            }
+            
+            .gallery-item {
+                break-inside: avoid;
+                margin-bottom: 1rem;
+                width: 100%;
+                box-sizing: border-box;
             }
             
             @media (min-width: 640px) {
                 .masonry-gallery {
                     column-count: 2;
+                    column-gap: 1.25rem;
                 }
             }
             
             @media (min-width: 1024px) {
                 .masonry-gallery {
                     column-count: 3;
+                    column-gap: 1.5rem;
                 }
             }
             
             @media (min-width: 1280px) {
                 .masonry-gallery {
                     column-count: 4;
+                    column-gap: 1.5rem;
                 }
-            }
-            
-            .gallery-item {
-                break-inside: avoid;
-                margin-bottom: 1.5rem;
             }
             
             /* Lightbox Modal */
@@ -775,17 +783,17 @@
                 top: 0;
                 width: 100%;
                 height: 100%;
-                background-color: rgba(0,0,0,0.95);
-                backdrop-filter: blur(10px);
+                background-color: rgba(0, 0, 0, 0.9);
+                overflow: hidden;
             }
             
             .lightbox-content {
                 position: relative;
                 margin: auto;
-                padding: 20px;
+                padding: 0;
                 width: 90%;
+                height: 90%;
                 max-width: 1200px;
-                height: 90vh;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -801,19 +809,12 @@
             .lightbox-close {
                 position: absolute;
                 top: 20px;
-                right: 40px;
-                color: white;
+                right: 35px;
+                color: #f1f1f1;
                 font-size: 40px;
                 font-weight: bold;
                 cursor: pointer;
-                background: rgba(0,0,0,0.5);
-                border-radius: 50%;
-                width: 50px;
-                height: 50px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: background-color 0.3s;
+                z-index: 10000;
             }
             
             .lightbox-close:hover {
