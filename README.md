@@ -5,11 +5,16 @@ A comprehensive platform for finding, registering, and managing members of the O
 ## Features
 
 ### User Features
-- **User Registration**: Complete membership registration with:
+- **Web Registration**: Complete membership registration with:
   - Personal information (National ID, Phone, Names)
   - Institution selection from comprehensive database
   - Geographic selection (Region → County → Constituency → Ward)
   - Custom polling station entry with auto-creation
+- **USSD Registration**: Mobile phone registration without internet:
+  - Dial *123# to access registration menu
+  - Complete registration via interactive USSD menus
+  - 4-digit PIN setup for account access
+  - Works on any mobile phone (no internet required)
 - **Authentication**: Secure login and logout functionality
 - **User Dashboard**: Complete profile management showing:
   - Personal details and account information
@@ -120,17 +125,20 @@ A comprehensive platform for finding, registering, and managing members of the O
 
 ### Key Routes
 - `/` - Welcome page
-- `/register` - User registration
+- `/register` - User registration (web)
 - `/login` - User authentication
 - `/dashboard` - User dashboard (authenticated)
 - `/admin` - Admin dashboard (admin only)
 - `/admin/users` - User management (admin only)
 - `/admin/export/users/{format}` - Data export (admin only)
+- `/ussd` - USSD endpoint (mobile gateway)
+- `/ussd-test` - USSD testing interface
 
 ### Controllers
 - `AuthController` - Authentication and registration
 - `DashboardController` - User dashboard
 - `AdminController` - Admin panel and user management
+- `UssdController` - USSD registration system
 
 ### Middleware
 - `AdminMiddleware` - Protects admin routes
@@ -144,6 +152,27 @@ A comprehensive platform for finding, registering, and managing members of the O
 - **Authentication**: Laravel's built-in authentication
 - **Pagination**: Laravel's pagination system
 - **Export**: Custom CSV export (ready for Excel/PDF/Word extensions)
+- **USSD**: Custom USSD implementation with session management
+
+## USSD Registration
+
+The system includes a comprehensive USSD registration system that allows users to register without internet access:
+
+### USSD Code: *123#
+
+### Features:
+- **Complete Registration Flow** - Full registration via interactive menus
+- **Geographic Selection** - Region → County → Constituency → Ward
+- **Institution Database** - Select from existing institutions or enter custom
+- **PIN Security** - 4-digit PIN for account access
+- **Session Management** - Persistent session handling
+- **Error Handling** - Comprehensive input validation
+
+### Testing:
+Access the USSD testing interface at: `http://127.0.0.1:8000/ussd-test`
+
+### Documentation:
+See `USSD_DOCUMENTATION.md` for complete technical details and deployment guide.
 
 ## User Roles
 

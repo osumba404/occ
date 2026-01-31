@@ -9,6 +9,7 @@ Route::get('/', function () {
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UssdController;
 
 Route::get('/membership', function () {
     return view('membership');
@@ -44,3 +45,13 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::post('/users/{id}/toggle-admin', [AdminController::class, 'toggleAdmin'])->name('users.toggle-admin');
     Route::get('/export/users/{format}', [AdminController::class, 'exportUsers'])->name('export.users');
 });
+
+// USSD Routes
+Route::post('/ussd', [UssdController::class, 'handleUssd']);
+Route::get('/ussd', [UssdController::class, 'handleUssd']);
+Route::get('/ussd-test', function() {
+    return view('ussd-test');
+});
+
+// USSD webhook for external gateways
+Route::post('/webhook/ussd', [UssdController::class, 'handleUssd']);
