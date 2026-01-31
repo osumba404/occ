@@ -27,13 +27,9 @@ class User extends Authenticatable
         'is_admin',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
-     */
     protected $hidden = [
-        // No password/token to hide anymore
+        'password',
+        'remember_token',
     ];
 
     /**
