@@ -25,6 +25,7 @@ class User extends Authenticatable
         'institution_id',
         'polling_station_id',
         'is_admin',
+        'password',
     ];
 
     protected $hidden = [

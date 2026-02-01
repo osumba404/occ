@@ -17,8 +17,10 @@ return new class extends Migration
             $table->string('phone_number')->unique();
             $table->string('surname');
             $table->string('first_middle_name');
-            $table->foreignId('institution_id')->constrained('institutions'); // Default cascade? Maybe null on delete? User said "Users keep institution_id safely" so I will leave it restrictive or set null? Safest is standard constraint for now.
+            $table->foreignId('institution_id')->constrained('institutions');
             $table->foreignId('polling_station_id')->constrained('polling_stations');
+            $table->string('password');
+            $table->rememberToken();
             $table->boolean('is_admin')->default(false);
             $table->timestamps();
         });
