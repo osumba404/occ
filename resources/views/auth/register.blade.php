@@ -195,7 +195,7 @@
                                     <select id="region_id" name="region_id" required class="form-input transition-all">
                                         <option value="">Select Region</option>
                                         @foreach($regions as $region)
-                                            <option value="{{ $region->iebc_code }}" {{ old('region_id') == $region->iebc_code ? 'selected' : '' }}>
+                                            <option value="{{ $region->region_code }}" {{ old('region_id') == $region->region_code ? 'selected' : '' }}>
                                                 {{ $region->name }}
                                             </option>
                                         @endforeach
