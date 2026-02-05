@@ -379,14 +379,14 @@
             </section>
 
             <!-- Leadership Section -->
-            <section id="leadership" class="py-24 bg-white relative overflow-hidden">
+            <section id="leadership" class="py-24 bg-[#0a0f1c] relative overflow-hidden">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <h2 class="text-4xl md:text-5xl font-bold text-center mb-20 text-gray-900 tracking-tight">
+                    <h2 class="text-4xl md:text-5xl font-bold text-center mb-20 text-white tracking-tight">
                         Our Leadership
                     </h2>
                     <div class="flex flex-wrap justify-center gap-10">
                         <!-- Leader 1: Raila Amolo Odinga -->
-                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-gray-100 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-white shadow-lg">
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
                             <img src="{{ asset('images/Raila Amolo Odinga- Party leader.jpeg') }}" alt="Party Leader" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
                             
@@ -404,7 +404,7 @@
                         </div>
 
                         <!-- Leader 2: Hon. Oduor Ongwen -->
-                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-gray-100 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-white shadow-lg">
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
                             <img src="{{ asset('images/Hon. Oduor Ongwen- Executive Director ODM party.jpeg') }}" alt="Executive Director" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
                             
@@ -421,7 +421,7 @@
                         </div>
 
                         <!-- Leader 3: Hon. Gerald Owuor -->
-                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-gray-100 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-white shadow-lg">
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
                             <img src="{{ asset('images/ODM_Comrades_Chapter_National_Chairperson_Gerald_Ogalo.jpeg') }}" alt="National Chairperson" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
                             
@@ -438,7 +438,7 @@
                         </div>
 
                         <!-- Leader 4: Hannington Oguk -->
-                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-gray-100 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-white shadow-lg">
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
                             <img src="{{ asset('images/Hannington_Oguk_Secretary_General_ODM_Comrades_Chapter.jpeg') }}" alt="Secretary General" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
                             
@@ -455,7 +455,7 @@
                         </div>
 
                         <!-- Leader 5: Maureen Njoroge -->
-                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-gray-100 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-white shadow-lg">
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
                             <img src="{{ asset('images/Moh.jpeg') }}" alt="Communication Director" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
                             
