@@ -412,68 +412,68 @@
                         </div>
 
                         <!-- Leader 2: Hon. Oduor Ongwen -->
-                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/10 transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(59,130,246,0.4)] cursor-pointer">
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
                             <img src="{{ asset('images/Hon. Oduor Ongwen- Executive Director ODM party.jpeg') }}" alt="Executive Director" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
                             
-                           <div class="absolute bottom-0 w-full p-6 backdrop-blur-md bg-black/40 border-t border-white/10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-out">
-                                <h3 class="text-white text-3xl font-bold mb-1 font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Hon. Oduor Ongwen</h3>
+                            <div class="absolute bottom-0 w-full p-8 bg-black/60 backdrop-blur-md border-t border-white/10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                                <h3 class="text-white text-3xl font-bold mb-2 font-sans">Hon. Oduor Ongwen</h3>
                                 <div class="flex items-center gap-2 mb-4">
-                                    <div class="w-8 h-0.5 bg-blue-500 shadow-[0_0_10px_blue]"></div>
-                                    <p class="text-blue-400 font-bold uppercase tracking-[0.2em] text-xs text-shadow-sm">Executive Director</p>
+                                    <div class="w-10 h-0.5 bg-blue-500"></div>
+                                    <p class="text-blue-500 font-bold uppercase tracking-widest text-xs">Executive Director</p>
                                 </div>
-                                <p class="text-gray-200 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 translate-y-2 group-hover:translate-y-0 transform">
+                                <p class="text-gray-300 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
                                     "The party remains the engine of progressive change and strategic mobilization."
                                 </p>
                             </div>
                         </div>
 
                         <!-- Leader 3: Hon. Gerald Owuor -->
-                         <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/10 transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(234,88,12,0.4)] cursor-pointer">
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
                             <img src="{{ asset('images/ODM_Comrades_Chapter_National_Chairperson_Gerald_Ogalo.jpeg') }}" alt="National Chairperson" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
                             
-                            <div class="absolute bottom-0 w-full p-6 backdrop-blur-md bg-black/40 border-t border-white/10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-out">
-                                <h3 class="text-white text-3xl font-bold mb-1 font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Hon. Gerald Owuor</h3>
+                            <div class="absolute bottom-0 w-full p-8 bg-black/60 backdrop-blur-md border-t border-white/10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                                <h3 class="text-white text-3xl font-bold mb-2 font-sans">Hon. Gerald Owuor</h3>
                                 <div class="flex items-center gap-2 mb-4">
-                                    <div class="w-8 h-0.5 bg-orange-500 shadow-[0_0_10px_orange]"></div>
-                                    <p class="text-orange-400 font-bold uppercase tracking-[0.2em] text-xs text-shadow-sm">National Chairperson</p>
+                                    <div class="w-10 h-0.5 bg-orange-500"></div>
+                                    <p class="text-orange-500 font-bold uppercase tracking-widest text-xs">National Chairperson</p>
                                 </div>
-                                <p class="text-gray-200 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 translate-y-2 group-hover:translate-y-0 transform">
+                                <p class="text-gray-300 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
                                     "Comradeship is the heartbeat of our movement and youth empowerment."
                                 </p>
                             </div>
                         </div>
 
                         <!-- Leader 4: Hannington Oguk -->
-                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/10 transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(59,130,246,0.4)] cursor-pointer">
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
                             <img src="{{ asset('images/Hannington_Oguk_Secretary_General_ODM_Comrades_Chapter.jpeg') }}" alt="Secretary General" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
                             
-                            <div class="absolute bottom-0 w-full p-6 backdrop-blur-md bg-black/40 border-t border-white/10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-out">
-                                <h3 class="text-white text-3xl font-bold mb-1 font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Hannington Oguk</h3>
+                            <div class="absolute bottom-0 w-full p-8 bg-black/60 backdrop-blur-md border-t border-white/10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                                <h3 class="text-white text-3xl font-bold mb-2 font-sans">Hannington Oguk</h3>
                                 <div class="flex items-center gap-2 mb-4">
-                                    <div class="w-8 h-0.5 bg-blue-500 shadow-[0_0_10px_blue]"></div>
-                                    <p class="text-blue-400 font-bold uppercase tracking-[0.2em] text-xs text-shadow-sm">Secretary General</p>
+                                    <div class="w-10 h-0.5 bg-blue-500"></div>
+                                    <p class="text-blue-500 font-bold uppercase tracking-widest text-xs">Secretary General</p>
                                 </div>
-                                <p class="text-gray-200 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 translate-y-2 group-hover:translate-y-0 transform">
+                                <p class="text-gray-300 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
                                     "Structure and integrity define our path forward as we organize."
                                 </p>
                             </div>
                         </div>
 
                         <!-- Leader 5: Maureen Njoroge -->
-                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/10 transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(234,88,12,0.4)] cursor-pointer">
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
                             <img src="{{ asset('images/Moh.jpeg') }}" alt="Communication Director" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
                             
-                            <div class="absolute bottom-0 w-full p-6 backdrop-blur-md bg-black/40 border-t border-white/10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-out">
-                                <h3 class="text-white text-3xl font-bold mb-1 font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Maureen Njoroge</h3>
+                            <div class="absolute bottom-0 w-full p-8 bg-black/60 backdrop-blur-md border-t border-white/10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                                <h3 class="text-white text-3xl font-bold mb-2 font-sans">Maureen Njoroge</h3>
                                 <div class="flex items-center gap-2 mb-4">
-                                    <div class="w-8 h-0.5 bg-orange-500 shadow-[0_0_10px_orange]"></div>
-                                    <p class="text-orange-400 font-bold uppercase tracking-[0.2em] text-xs text-shadow-sm">Communication Director</p>
+                                    <div class="w-10 h-0.5 bg-orange-500"></div>
+                                    <p class="text-orange-500 font-bold uppercase tracking-widest text-xs">Communication Director</p>
                                 </div>
-                                <p class="text-gray-200 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 translate-y-2 group-hover:translate-y-0 transform">
+                                <p class="text-gray-300 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
                                     "We are committed to providing timely, accurate, and transparent information."
                                 </p>
                             </div>
