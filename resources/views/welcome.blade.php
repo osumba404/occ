@@ -37,6 +37,157 @@
                     <!-- Desktop Navigation -->
                     <div class="hidden md:flex items-center space-x-4">
                         <a href="#leadership" class="text-sm font-medium text-gray-700 hover:text-orange-600">Leadership</a>
+                        
+                        <!-- Events Dropdown -->
+                        <div class="relative group" id="events-dropdown-container">
+                            <button id="events-button" class="group inline-flex items-center text-sm font-medium text-gray-700 hover:text-orange-600 focus:outline-none">
+                                <span>Events</span>
+                                <svg class="ml-2 h-5 w-5 text-gray-400 group-hover:text-orange-600 transition-transform duration-200" id="events-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+
+                            <!-- Dropdown Menu -->
+                            <div id="events-menu" class="hidden absolute z-50 left-1/2 transform -translate-x-1/2 mt-3 w-80 max-w-[90vw] bg-white rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 overflow-hidden origin-top transition-all duration-200 ease-out opacity-0 scale-95 origin-top-left">
+                                <div class="p-4 bg-orange-50 border-b border-orange-100">
+                                    <h3 class="text-sm font-bold text-orange-800 uppercase tracking-wider">2026 Events Schedule</h3>
+                                </div>
+                                <div class="max-h-[60vh] overflow-y-auto py-2">
+                                    <!-- Event 1 -->
+                                    <button class="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-colors duration-150 event-item-btn" 
+                                            data-title="Coast Chapter (Mombasa)" 
+                                            data-date="February 17, 2026"
+                                            data-location="Mombasa, Kilifi, Kwale, Taita Taveta"
+                                            data-venue="Tononoka Hall Mombasa"
+                                            data-attendees="1000 students (From Mombasa, Kilifi, Kwale, Taita Taveta)"
+                                            data-theme="&quot;From Campus to Country: Reawakening ODM Ideology Among Students&quot;"
+                                            data-objectives="To register over 7000 students, launch Coast Region Comrades Chapter, champion voter registration, and offer political education.">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <p class="text-sm font-bold text-blue-900">Coast Chapter</p>
+                                                <p class="text-xs text-gray-500 mt-0.5">Mombasa, Kilifi, Kwale, Taita Taveta</p>
+                                            </div>
+                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-orange-100 text-orange-800 whitespace-nowrap">
+                                                Feb 17
+                                            </span>
+                                        </div>
+                                    </button>
+                                    <!-- Event 2 -->
+                                    <button class="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-colors duration-150 event-item-btn"
+                                            data-title="Nakuru Chapter"
+                                            data-date="February 23, 2026"
+                                            data-venue="TBD"
+                                            data-theme="Regional Mobilization"
+                                            data-attendees="Students from Nakuru Region">
+                                        <div class="flex justify-between items-center">
+                                            <p class="text-sm font-bold text-gray-800">Nakuru Chapter</p>
+                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600 whitespace-nowrap">Feb 23</span>
+                                        </div>
+                                    </button>
+                                    <!-- Event 3 -->
+                                    <button class="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-colors duration-150 event-item-btn"
+                                            data-title="Narok Chapter"
+                                            data-date="February 24, 2026"
+                                            data-venue="TBD"
+                                            data-theme="Grassroots Activation"
+                                            data-attendees="Students from Narok Region">
+                                        <div class="flex justify-between items-center">
+                                            <p class="text-sm font-bold text-gray-800">Narok Chapter</p>
+                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600 whitespace-nowrap">Feb 24</span>
+                                        </div>
+                                    </button>
+                                    <!-- Event 4 -->
+                                    <button class="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-colors duration-150 event-item-btn"
+                                            data-title="Kisumu Chapter (Nyanza)"
+                                            data-date="March 4, 2026"
+                                            data-location="Homa Bay, Migori, Kisumu, Siaya"
+                                            data-venue="TBD"
+                                            data-theme="Strategy & Consolidation"
+                                            data-attendees="Students from Nyanza Region">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <p class="text-sm font-bold text-gray-800">Kisumu Chapter</p>
+                                                <p class="text-xs text-gray-500 mt-0.5">Nyanza Region</p>
+                                            </div>
+                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600 whitespace-nowrap">Mar 4</span>
+                                        </div>
+                                    </button>
+                                    <!-- Event 5 -->
+                                    <button class="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-colors duration-150 event-item-btn"
+                                            data-title="Kakamega Chapter (Western)"
+                                            data-date="March 5, 2026"
+                                            data-venue="TBD"
+                                            data-theme="Western Region Activation"
+                                            data-attendees="Students from Western Region">
+                                        <div class="flex justify-between items-center">
+                                            <p class="text-sm font-bold text-gray-800">Kakamega Chapter</p>
+                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600 whitespace-nowrap">Mar 5</span>
+                                        </div>
+                                    </button>
+                                    <!-- Event 6 -->
+                                    <button class="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-colors duration-150 event-item-btn"
+                                            data-title="Eldoret Chapter (Rift Valley)"
+                                            data-date="April 9, 2026"
+                                            data-venue="TBD"
+                                            data-theme="Rift Valley Engagement"
+                                            data-attendees="Students from Rift Valley">
+                                        <div class="flex justify-between items-center">
+                                            <p class="text-sm font-bold text-gray-800">Eldoret Chapter</p>
+                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600 whitespace-nowrap">Apr 9</span>
+                                        </div>
+                                    </button>
+                                    <!-- Event 7 -->
+                                    <button class="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-colors duration-150 event-item-btn"
+                                            data-title="Eastern & N.E Chapter"
+                                            data-date="April 30, 2026"
+                                            data-venue="TBD"
+                                            data-theme="Regional Outreach"
+                                            data-attendees="Students from Eastern & NE Region">
+                                        <div class="flex justify-between items-center">
+                                            <p class="text-sm font-bold text-gray-800">Eastern & N.E Chapter</p>
+                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600 whitespace-nowrap">Apr 30</span>
+                                        </div>
+                                    </button>
+                                    <!-- Event 8 -->
+                                    <button class="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-colors duration-150 event-item-btn"
+                                            data-title="Central Kenya Chapter (Nyeri)"
+                                            data-date="May 13, 2026"
+                                            data-venue="TBD"
+                                            data-theme="Mountain Region Launch"
+                                            data-attendees="Students from Central Region">
+                                        <div class="flex justify-between items-center">
+                                            <p class="text-sm font-bold text-gray-800">Central Kenya (Nyeri)</p>
+                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600 whitespace-nowrap">May 13</span>
+                                        </div>
+                                    </button>
+                                    <!-- Event 9 -->
+                                    <button class="w-full text-left px-4 py-3 hover:bg-orange-50 border-b border-gray-100 last:border-0 bg-orange-50/50 transition-colors duration-150 event-item-btn"
+                                            data-title="ODM COMRADES CHAPTER MEGALAUNCH"
+                                            data-date="May 29, 2026"
+                                            data-venue="TBD"
+                                            data-theme="National Launch"
+                                            data-attendees="All Chapters">
+                                        <div class="flex justify-between items-center">
+                                            <p class="text-sm font-bold text-orange-900">MEGALAUNCH</p>
+                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-orange-200 text-orange-800 whitespace-nowrap">May 29</span>
+                                        </div>
+                                    </button>
+                                    <!-- Event 10 -->
+                                    <button class="w-full text-left px-4 py-3 hover:bg-gray-50 last:border-0 transition-colors duration-150 event-item-btn"
+                                            data-title="Kisii & Nyamira Chapter"
+                                            data-date="June 19, 2026"
+                                            data-venue="TBD"
+                                            data-theme="Regional Activation"
+                                            data-attendees="Students from Kisii & Nyamira">
+                                        <div class="flex justify-between items-center">
+                                            <p class="text-sm font-bold text-gray-800">Kisii & Nyamira</p>
+                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600 whitespace-nowrap">Jun 19</span>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
                         <a href="#celebrations" class="text-sm font-medium text-gray-700 hover:text-orange-600">Celebrations</a>
                         <a href="#campus" class="text-sm font-medium text-gray-700 hover:text-orange-600">Campus</a>
                         <a href="#youth" class="text-sm font-medium text-gray-700 hover:text-orange-600">Youth</a>
@@ -69,6 +220,101 @@
             <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
                 <div class="px-2 pt-2 pb-3 space-y-1">
                     <a href="#leadership" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-md">Leadership</a>
+                    
+                    <!-- Mobile Events Section -->
+                    <div class="mobile-events-section">
+                        <button id="mobile-events-toggle" class="w-full flex items-center justify-between px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-md">
+                            <span>Events</span>
+                            <svg id="mobile-events-arrow" class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="mobile-events-list" class="hidden pl-6 pr-3 py-2 space-y-1">
+                            <button class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-gray-50 rounded-md event-item-btn"
+                                    data-title="Coast Chapter (Mombasa)" 
+                                    data-date="February 17, 2026"
+                                    data-location="Mombasa, Kilifi, Kwale, Taita Taveta"
+                                    data-venue="Tononoka Hall Mombasa"
+                                    data-attendees="1000 students (From Mombasa, Kilifi, Kwale, Taita Taveta)"
+                                    data-theme="&quot;From Campus to Country: Reawakening ODM Ideology Among Students&quot;">
+                                Coast Chapter - Feb 17
+                            </button>
+                            <button class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-gray-50 rounded-md event-item-btn"
+                                    data-title="Nakuru Chapter"
+                                    data-date="February 23, 2026"
+                                    data-venue="TBD"
+                                    data-theme="Regional Mobilization"
+                                    data-attendees="Students from Nakuru Region">
+                                Nakuru Chapter - Feb 23
+                            </button>
+                            <button class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-gray-50 rounded-md event-item-btn"
+                                    data-title="Narok Chapter"
+                                    data-date="February 24, 2026"
+                                    data-venue="TBD"
+                                    data-theme="Grassroots Activation"
+                                    data-attendees="Students from Narok Region">
+                                Narok Chapter - Feb 24
+                            </button>
+                            <button class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-gray-50 rounded-md event-item-btn"
+                                    data-title="Kisumu Chapter (Nyanza)"
+                                    data-date="March 4, 2026"
+                                    data-location="Homa Bay, Migori, Kisumu, Siaya"
+                                    data-venue="TBD"
+                                    data-theme="Strategy & Consolidation"
+                                    data-attendees="Students from Nyanza Region">
+                                Kisumu Chapter - Mar 4
+                            </button>
+                            <button class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-gray-50 rounded-md event-item-btn"
+                                    data-title="Kakamega Chapter (Western)"
+                                    data-date="March 5, 2026"
+                                    data-venue="TBD"
+                                    data-theme="Western Region Activation"
+                                    data-attendees="Students from Western Region">
+                                Kakamega Chapter - Mar 5
+                            </button>
+                            <button class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-gray-50 rounded-md event-item-btn"
+                                    data-title="Eldoret Chapter (Rift Valley)"
+                                    data-date="April 9, 2026"
+                                    data-venue="TBD"
+                                    data-theme="Rift Valley Engagement"
+                                    data-attendees="Students from Rift Valley">
+                                Eldoret Chapter - Apr 9
+                            </button>
+                            <button class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-gray-50 rounded-md event-item-btn"
+                                    data-title="Eastern & N.E Chapter"
+                                    data-date="April 30, 2026"
+                                    data-venue="TBD"
+                                    data-theme="Regional Outreach"
+                                    data-attendees="Students from Eastern & NE Region">
+                                Eastern & N.E - Apr 30
+                            </button>
+                            <button class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-gray-50 rounded-md event-item-btn"
+                                    data-title="Central Kenya Chapter (Nyeri)"
+                                    data-date="May 13, 2026"
+                                    data-venue="TBD"
+                                    data-theme="Mountain Region Launch"
+                                    data-attendees="Students from Central Region">
+                                Central Kenya - May 13
+                            </button>
+                            <button class="w-full text-left px-3 py-2 text-sm text-orange-600 hover:text-orange-700 hover:bg-orange-50 rounded-md font-semibold event-item-btn"
+                                    data-title="ODM COMRADES CHAPTER MEGALAUNCH"
+                                    data-date="May 29, 2026"
+                                    data-venue="TBD"
+                                    data-theme="National Launch"
+                                    data-attendees="All Chapters">
+                                MEGALAUNCH - May 29
+                            </button>
+                            <button class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-gray-50 rounded-md event-item-btn"
+                                    data-title="Kisii & Nyamira Chapter"
+                                    data-date="June 19, 2026"
+                                    data-venue="TBD"
+                                    data-theme="Regional Activation"
+                                    data-attendees="Students from Kisii & Nyamira">
+                                Kisii & Nyamira - Jun 19
+                            </button>
+                        </div>
+                    </div>
+                    
                     <a href="#celebrations" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-md">Celebrations</a>
                     <a href="#campus" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-md">Campus</a>
                     <a href="#youth" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-md">Youth</a>
@@ -132,29 +378,144 @@
             </section>
 
             <!-- Leadership Section -->
-            <section id="leadership" class="py-16 bg-gradient-to-br from-gray-50 via-blue-50 to-orange-50">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Our Leadership</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div class="text-center bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                            <img src="{{ asset('images/Raila Amolo Odinga- Party leader.jpeg') }}" alt="Party Leader" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg border-4 border-orange-500">
-                            <h3 class="font-semibold text-blue-900">Raila Amolo Odinga</h3>
-                            <p class="text-sm text-orange-600 font-medium">Party Leader</p>
+            <section id="leadership" class="py-24 bg-gradient-to-br from-slate-900 via-[#0f172a] to-black relative overflow-hidden">
+                <!-- Background Pattern (Optional for texture) -->
+                <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#475569 1px, transparent 1px); background-size: 32px 32px;"></div>
+                
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 via-white to-blue-400 animate-gradient">
+                            Our Leadership
+                        </span>
+                    </h2>
+                    <div class="flex flex-wrap justify-center gap-10">
+                        <!-- Leader 1: Raila Amolo Odinga -->
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/10 transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(234,88,12,0.4)] cursor-pointer">
+                            <img src="{{ asset('images/Raila Amolo Odinga- Party leader.jpeg') }}" alt="Party Leader" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
+                            
+                            <!-- Glass Pane -->
+                            <div class="absolute bottom-0 w-full p-6 backdrop-blur-md bg-black/40 border-t border-white/10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                                <div class="absolute -top-12 right-6 w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(234,88,12,0.6)] group-hover:scale-110 transition-transform duration-500">
+                                   <span class="text-xl">👑</span>
+                                </div>
+                                <h3 class="text-white text-3xl font-bold mb-1 font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Raila Amolo Odinga</h3>
+                                <div class="flex items-center gap-2 mb-4">
+                                    <div class="w-8 h-0.5 bg-orange-500 shadow-[0_0_10px_orange]"></div>
+                                    <p class="text-orange-400 font-bold uppercase tracking-[0.2em] text-xs text-shadow-sm">Party Leader</p>
+                                </div>
+                                <p class="text-gray-200 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 translate-y-2 group-hover:translate-y-0 transform">
+                                    "We stand firm in our resolve to build a democratic and inclusive nation."
+                                </p>
+                            </div>
                         </div>
-                        <div class="text-center bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                            <img src="{{ asset('images/Hon. Oduor Ongwen- Executive Director ODM party.jpeg') }}" alt="Executive Director" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg border-4 border-blue-500">
-                            <h3 class="font-semibold text-blue-900">Hon. Oduor Ongwen</h3>
-                            <p class="text-sm text-orange-600 font-medium">Executive Director</p>
+
+                        <!-- Leader 2: Hon. Oduor Ongwen -->
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/10 transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(59,130,246,0.4)] cursor-pointer">
+                            <img src="{{ asset('images/Hon. Oduor Ongwen- Executive Director ODM party.jpeg') }}" alt="Executive Director" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
+                            
+                           <div class="absolute bottom-0 w-full p-6 backdrop-blur-md bg-black/40 border-t border-white/10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                                <h3 class="text-white text-3xl font-bold mb-1 font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Hon. Oduor Ongwen</h3>
+                                <div class="flex items-center gap-2 mb-4">
+                                    <div class="w-8 h-0.5 bg-blue-500 shadow-[0_0_10px_blue]"></div>
+                                    <p class="text-blue-400 font-bold uppercase tracking-[0.2em] text-xs text-shadow-sm">Executive Director</p>
+                                </div>
+                                <p class="text-gray-200 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 translate-y-2 group-hover:translate-y-0 transform">
+                                    "The party remains the engine of progressive change and strategic mobilization."
+                                </p>
+                            </div>
                         </div>
-                        <div class="text-center bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                            <img src="{{ asset('images/ODM_Comrades_Chapter_National_Chairperson_Gerald_Ogalo.jpeg') }}" alt="National Chairperson" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg border-4 border-orange-500">
-                            <h3 class="font-semibold text-blue-900">Gerald Ogalo</h3>
-                            <p class="text-sm text-orange-600 font-medium">National Chairperson</p>
+
+                        <!-- Leader 3: Hon. Gerald Owuor -->
+                         <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/10 transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(234,88,12,0.4)] cursor-pointer">
+                            <img src="{{ asset('images/ODM_Comrades_Chapter_National_Chairperson_Gerald_Ogalo.jpeg') }}" alt="National Chairperson" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
+                            
+                            <div class="absolute bottom-0 w-full p-6 backdrop-blur-md bg-black/40 border-t border-white/10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                                <h3 class="text-white text-3xl font-bold mb-1 font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Hon. Gerald Owuor</h3>
+                                <div class="flex items-center gap-2 mb-4">
+                                    <div class="w-8 h-0.5 bg-orange-500 shadow-[0_0_10px_orange]"></div>
+                                    <p class="text-orange-400 font-bold uppercase tracking-[0.2em] text-xs text-shadow-sm">National Chairperson</p>
+                                </div>
+                                <p class="text-gray-200 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 translate-y-2 group-hover:translate-y-0 transform">
+                                    "Comradeship is the heartbeat of our movement and youth empowerment."
+                                </p>
+                            </div>
                         </div>
-                        <div class="text-center bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                            <img src="{{ asset('images/Hannington_Oguk_Secretary_General_ODM_Comrades_Chapter.jpeg') }}" alt="Secretary General" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg border-4 border-blue-500">
-                            <h3 class="font-semibold text-blue-900">Hannington Oguk</h3>
-                            <p class="text-sm text-orange-600 font-medium">Secretary General</p>
+
+                        <!-- Leader 4: Hannington Oguk -->
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/10 transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(59,130,246,0.4)] cursor-pointer">
+                            <img src="{{ asset('images/Hannington_Oguk_Secretary_General_ODM_Comrades_Chapter.jpeg') }}" alt="Secretary General" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
+                            
+                            <div class="absolute bottom-0 w-full p-6 backdrop-blur-md bg-black/40 border-t border-white/10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                                <h3 class="text-white text-3xl font-bold mb-1 font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Hannington Oguk</h3>
+                                <div class="flex items-center gap-2 mb-4">
+                                    <div class="w-8 h-0.5 bg-blue-500 shadow-[0_0_10px_blue]"></div>
+                                    <p class="text-blue-400 font-bold uppercase tracking-[0.2em] text-xs text-shadow-sm">Secretary General</p>
+                                </div>
+                                <p class="text-gray-200 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 translate-y-2 group-hover:translate-y-0 transform">
+                                    "Structure and integrity define our path forward as we organize."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Leader 5: Maureen Njoroge -->
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/10 transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(234,88,12,0.4)] cursor-pointer">
+                            <img src="{{ asset('images/Moh.jpeg') }}" alt="Communication Director" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
+                            
+                            <div class="absolute bottom-0 w-full p-6 backdrop-blur-md bg-black/40 border-t border-white/10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                                <h3 class="text-white text-3xl font-bold mb-1 font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Maureen Njoroge</h3>
+                                <div class="flex items-center gap-2 mb-4">
+                                    <div class="w-8 h-0.5 bg-orange-500 shadow-[0_0_10px_orange]"></div>
+                                    <p class="text-orange-400 font-bold uppercase tracking-[0.2em] text-xs text-shadow-sm">Communication Director</p>
+                                </div>
+                                <p class="text-gray-200 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 translate-y-2 group-hover:translate-y-0 transform">
+                                    "We are committed to providing timely, accurate, and transparent information."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Leader 6: Tony (IT Team) -->
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/10 transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(100,116,139,0.4)] cursor-pointer">
+                            <img src="{{ asset('images/Tony.jpeg') }}" alt="IT Team" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
+                            
+                            <div class="absolute bottom-0 w-full p-6 backdrop-blur-md bg-black/40 border-t border-white/10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                                <h3 class="text-white text-3xl font-bold mb-1 font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Tony W. Inganga</h3>
+                                <div class="flex items-center gap-2 mb-4">
+                                    <div class="w-8 h-0.5 bg-blue-400 shadow-[0_0_10px_skyblue]"></div>
+                                    <p class="text-blue-300 font-bold uppercase tracking-[0.2em] text-xs text-shadow-sm">IT Specialist</p>
+                                </div>
+                                <p class="text-gray-200 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 translate-y-2 group-hover:translate-y-0 transform">
+                                    "Service to the party and the people is our highest calling in every capacity."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Leader 7: Blank (IT Team) -->
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/10 transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(100,116,139,0.4)] cursor-pointer bg-gray-900">
+                             <!-- Placeholder Silhouette -->
+                             <div class="absolute inset-0 flex items-center justify-center bg-gray-800">
+                                <svg class="w-32 h-32 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                             </div>
+                            
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-500"></div>
+                            
+                            <div class="absolute bottom-0 w-full p-6 backdrop-blur-md bg-black/40 border-t border-white/10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                                <h3 class="text-white text-3xl font-bold mb-1 font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Evans Atula</h3>
+                                <div class="flex items-center gap-2 mb-4">
+                                    <div class="w-8 h-0.5 bg-gray-500 shadow-[0_0_10px_gray]"></div>
+                                    <p class="text-gray-400 font-bold uppercase tracking-[0.2em] text-xs text-shadow-sm">IT Specialist</p>
+                                </div>
+                                <p class="text-gray-200 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 translate-y-2 group-hover:translate-y-0 transform">
+                                    "Unity and discipline within the party are the pillars of our strength."
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -178,7 +539,7 @@
                         <!-- Gallery Item 1 - Large -->
                         <div class="gallery-item opacity-0 transform scale-95 transition-all duration-700 ease-out" data-category="celebrations">
                             <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
-                                <img src="{{ asset('images/ODM_Comrades_Chapter_ODM_20th_Celebrations_Mombasa_15_November_2025(1).jpeg') }}" alt="ODM 20th Celebrations" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                                <img src="{{ asset('images/ODM_Comrades_Chapter_ODM_20th_Celebrations_Mombasa_15_November_2025(1).jpeg') }}" alt="ODM 20th Celebrations" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                                         <h3 class="text-white font-bold text-lg">Grand Celebration</h3>
@@ -191,7 +552,7 @@
                         <!-- Gallery Item 2 - Medium -->
                         <div class="gallery-item opacity-0 transform scale-95 transition-all duration-700 ease-out delay-100" data-category="leadership">
                             <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
-                                <img src="{{ asset('images/ODM_Comrades_Chapter_ODM_20th_Celebrations_Mombasa_15_November_2025(2).jpeg') }}" alt="Leadership Address" class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+                                <img src="{{ asset('images/ODM_Comrades_Chapter_ODM_20th_Celebrations_Mombasa_15_November_2025(2).jpeg') }}" alt="Leadership Address" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                                         <h3 class="text-white font-bold text-lg">Leadership Address</h3>
@@ -204,7 +565,7 @@
                         <!-- Gallery Item 3 - Small -->
                         <div class="gallery-item opacity-0 transform scale-95 transition-all duration-700 ease-out delay-200" data-category="celebrations">
                             <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
-                                <img src="{{ asset('images/ODM_Comrades_Chapter_ODM_20th_Celebrations_Mombasa_15_November_2025(3).jpeg') }}" alt="Supporters" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                                <img src="{{ asset('images/ODM_Comrades_Chapter_ODM_20th_Celebrations_Mombasa_15_November_2025(3).jpeg') }}" alt="Supporters" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                                         <h3 class="text-white font-bold text-lg">Supporters</h3>
@@ -217,7 +578,7 @@
                         <!-- Gallery Item 4 - Large -->
                         <div class="gallery-item opacity-0 transform scale-95 transition-all duration-700 ease-out delay-300" data-category="celebrations">
                             <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
-                                <img src="{{ asset('images/ODM_Comrades_Chapter_ODM_20th_Celebrations_Mombasa_15_November_2025(4).jpeg') }}" alt="Main Event" class="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-110">
+                                <img src="{{ asset('images/ODM_Comrades_Chapter_ODM_20th_Celebrations_Mombasa_15_November_2025(4).jpeg') }}" alt="Main Event" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                                         <h3 class="text-white font-bold text-lg">Main Event</h3>
@@ -243,7 +604,7 @@
                         <!-- Gallery Item 6 - Small -->
                         <div class="gallery-item opacity-0 transform scale-95 transition-all duration-700 ease-out delay-500" data-category="celebrations">
                             <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
-                                <img src="{{ asset('images/ODM_Comrades_Chapter_ODM_20th_Celebrations_Mombasa_15_November_2025(6).jpeg') }}" alt="Crowd" class="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110">
+                                <img src="{{ asset('images/ODM_Comrades_Chapter_ODM_20th_Celebrations_Mombasa_15_November_2025(6).jpeg') }}" alt="Crowd" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                                         <h3 class="text-white font-bold text-lg">Massive Crowd</h3>
@@ -256,7 +617,7 @@
                         <!-- Gallery Item 7 - Medium -->
                         <div class="gallery-item opacity-0 transform scale-95 transition-all duration-700 ease-out delay-600" data-category="leadership">
                             <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
-                                <img src="{{ asset('images/ODM_Comrades_Chapter_ODM_20th_Celebrations_Mombasa_15_November_2025(7).jpeg') }}" alt="Party Unity" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110">
+                                <img src="{{ asset('images/ODM_Comrades_Chapter_ODM_20th_Celebrations_Mombasa_15_November_2025(7).jpeg') }}" alt="Party Unity" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                                         <h3 class="text-white font-bold text-lg">Party Unity</h3>
@@ -269,7 +630,7 @@
                         <!-- Video Gallery Item - Large Featured -->
                         <div class="gallery-item opacity-0 transform scale-95 transition-all duration-700 ease-out delay-700" data-category="celebrations">
                             <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500">
-                                <video controls class="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-105" poster="{{ asset('images/ODM_Comrades_Chapter_ODM_20th_Celebrations_Mombasa_15_November_2025(1).jpeg') }}">
+                                <video controls class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105" poster="{{ asset('images/ODM_Comrades_Chapter_ODM_20th_Celebrations_Mombasa_15_November_2025(1).jpeg') }}">
                                     <source src="{{ asset('images/ODM_Comrades_Chapter_ODM_20th_Celebrations_Mombasa_15_November_2025(cvideo).mp4') }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
@@ -317,7 +678,7 @@
                         <!-- Campus Gallery Item 2 - Small -->
                         <div class="gallery-item opacity-0 transform scale-95 transition-all duration-700 ease-out delay-100" data-category="tournament">
                             <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
-                                <img src="{{ asset('images/ODM_Comrades_Chapter_Campus_Engagement_and_Tournament_Multimedia_University_07_November_2025(2).jpeg') }}" alt="Tournament" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                                <img src="{{ asset('images/ODM_Comrades_Chapter_Campus_Engagement_and_Tournament_Multimedia_University_07_November_2025(2).jpeg') }}" alt="Tournament" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                                         <h3 class="text-white font-bold text-lg">Sports Tournament</h3>
@@ -330,7 +691,7 @@
                         <!-- Campus Gallery Item 3 - Large -->
                         <div class="gallery-item opacity-0 transform scale-95 transition-all duration-700 ease-out delay-200" data-category="engagement">
                             <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
-                                <img src="{{ asset('images/ODM_Comrades_Chapter_Campus_Engagement_and_Tournament_Multimedia_University_07_November_2025(3).jpeg') }}" alt="Campus Event" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                                <img src="{{ asset('images/ODM_Comrades_Chapter_Campus_Engagement_and_Tournament_Multimedia_University_07_November_2025(3).jpeg') }}" alt="Campus Event" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                                         <h3 class="text-white font-bold text-lg">Campus Rally</h3>
@@ -343,7 +704,7 @@
                         <!-- Campus Gallery Item 4 - Medium -->
                         <div class="gallery-item opacity-0 transform scale-95 transition-all duration-700 ease-out delay-300" data-category="tournament">
                             <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
-                                <img src="{{ asset('images/ODM_Comrades_Chapter_Campus_Engagement_and_Tournament_Multimedia_University_07_November_2025(4).jpeg') }}" alt="Competition" class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+                                <img src="{{ asset('images/ODM_Comrades_Chapter_Campus_Engagement_and_Tournament_Multimedia_University_07_November_2025(4).jpeg') }}" alt="Competition" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                                         <h3 class="text-white font-bold text-lg">Competition Finals</h3>
@@ -356,7 +717,7 @@
                         <!-- Campus Gallery Item 5 - Small -->
                         <div class="gallery-item opacity-0 transform scale-95 transition-all duration-700 ease-out delay-400" data-category="engagement">
                             <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
-                                <img src="{{ asset('images/ODM_Comrades_Chapter_Campus_Engagement_and_Tournament_Multimedia_University_07_November_2025(5).jpeg') }}" alt="Students" class="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110">
+                                <img src="{{ asset('images/ODM_Comrades_Chapter_Campus_Engagement_and_Tournament_Multimedia_University_07_November_2025(5).jpeg') }}" alt="Students" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                                         <h3 class="text-white font-bold text-lg">Student Leaders</h3>
@@ -369,7 +730,7 @@
                         <!-- Campus Gallery Item 6 - Medium -->
                         <div class="gallery-item opacity-0 transform scale-95 transition-all duration-700 ease-out delay-500" data-category="tournament">
                             <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
-                                <img src="{{ asset('images/ODM_Comrades_Chapter_Campus_Engagement_and_Tournament_Multimedia_University_07_November_2025(6).jpeg') }}" alt="Tournament Event" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110">
+                                <img src="{{ asset('images/ODM_Comrades_Chapter_Campus_Engagement_and_Tournament_Multimedia_University_07_November_2025(6).jpeg') }}" alt="Tournament Event" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                                         <h3 class="text-white font-bold text-lg">Tournament Event</h3>
@@ -382,7 +743,7 @@
                         <!-- Campus Gallery Item 7 - Small -->
                         <div class="gallery-item opacity-0 transform scale-95 transition-all duration-700 ease-out delay-600" data-category="engagement">
                             <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
-                                <img src="{{ asset('images/ODM_Comrades_Chapter_Campus_Engagement_and_Tournament_Multimedia_University_07_November_2025(7).jpeg') }}" alt="Campus Activity" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110">
+                                <img src="{{ asset('images/ODM_Comrades_Chapter_Campus_Engagement_and_Tournament_Multimedia_University_07_November_2025(7).jpeg') }}" alt="Campus Activity" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                                         <h3 class="text-white font-bold text-lg">Campus Activity</h3>
@@ -470,7 +831,7 @@
                             The Orange Democratic Movement is Kenya's premier political party dedicated to building a democratic, prosperous, and inclusive nation for all Kenyans.
                         </p>
                         <div class="flex space-x-4">
-                            <img src="{{ asset('images/orange.jfif') }}" alt="ODM Orange" class="h-8 w-auto opacity-90 rounded">
+                            <img src="{{ asset('images/logo.jpeg') }}" alt="ODM Comrades Chapter Logo" class="h-12 w-auto opacity-90 rounded">
                         </div>
                     </div>
                     
@@ -479,9 +840,9 @@
                         <h3 class="text-white text-lg font-bold" style="color: #ffffff;">Quick Links</h3>
                         <ul class="space-y-2">
                             <li><a href="#" class="text-white/90 hover:text-white text-sm transition-colors" style="color: rgba(255,255,255,0.9);">About Us</a></li>
-                            <li><a href="#" class="text-white/90 hover:text-white text-sm transition-colors" style="color: rgba(255,255,255,0.9);">Our Leadership</a></li>
+                            <li><a href="#leadership" class="text-white/90 hover:text-white text-sm transition-colors" style="color: rgba(255,255,255,0.9);">Our Leadership</a></li>
                             <li><a href="#" class="text-white/90 hover:text-white text-sm transition-colors" style="color: rgba(255,255,255,0.9);">Party Manifesto</a></li>
-                            <li><a href="#" class="text-white/90 hover:text-white text-sm transition-colors" style="color: rgba(255,255,255,0.9);">News & Events</a></li>
+                            <li><a href="#celebrations" class="text-white/90 hover:text-white text-sm transition-colors" style="color: rgba(255,255,255,0.9);">News & Events</a></li>
                             <li><a href="#" class="text-white/90 hover:text-white text-sm transition-colors" style="color: rgba(255,255,255,0.9);">Membership</a></li>
                         </ul>
                     </div>
@@ -509,11 +870,11 @@
                             </p>
                             <p class="text-white/90 text-sm" style="color: rgba(255,255,255,0.9);">
                                 <strong>Email:</strong><br>
-                                info@odm.co.ke
+                                odmcomradeschapter@gmail.com
                             </p>
                             <p class="text-white/90 text-sm" style="color: rgba(255,255,255,0.9);">
                                 <strong>Phone:</strong><br>
-                                +254 7XX XXX XXX
+                                +254-710-852-283
                             </p>
                         </div>
                     </div>
@@ -537,14 +898,28 @@
                     <!-- Social Media & Orange Image - Right Side -->
                     <div class="flex items-center space-x-6">
                         <div class="flex space-x-4">
-                            <a href="#" class="text-white/90 hover:text-white transition-colors" style="color: rgba(255,255,255,0.9);">
+                            <!-- Facebook -->
+                            <a href="https://www.facebook.com/profile.php?id=61580671413201" target="_blank" rel="noopener noreferrer" class="text-white/90 hover:text-white transition-colors hover:scale-110" style="color: rgba(255,255,255,0.9);">
                                 <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                                 </svg>
                             </a>
-                            <a href="#" class="text-white/90 hover:text-white transition-colors" style="color: rgba(255,255,255,0.9);">
+                            <!-- TikTok -->
+                            <a href="https://tiktok.com/@odm.comrades.chap" target="_blank" rel="noopener noreferrer" class="text-white/90 hover:text-white transition-colors hover:scale-110" style="color: rgba(255,255,255,0.9);">
                                 <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                                </svg>
+                            </a>
+                            <!-- Twitter/X -->
+                            <a href="https://x.com/OdmChapter57930?t=mz1SiSvW2qolvlN04CZf5Q&s=08" target="_blank" rel="noopener noreferrer" class="text-white/90 hover:text-white transition-colors hover:scale-110" style="color: rgba(255,255,255,0.9);">
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                            </a>
+                            <!-- WhatsApp -->
+                            <a href="https://whatsapp.com/channel/0029VbBJPq8F1YlUUedx5X2G" target="_blank" rel="noopener noreferrer" class="text-white/90 hover:text-white transition-colors hover:scale-110" style="color: rgba(255,255,255,0.9);">
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                                 </svg>
                             </a>
                         </div>
@@ -557,13 +932,129 @@
         <!-- JavaScript for Animations -->
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                // Mobile menu toggle functionality
+                // Mobile Menu Toggle
                 const mobileMenuButton = document.getElementById('mobile-menu-button');
                 const mobileMenu = document.getElementById('mobile-menu');
-                
+
                 if (mobileMenuButton && mobileMenu) {
                     mobileMenuButton.addEventListener('click', function() {
                         mobileMenu.classList.toggle('hidden');
+                    });
+                }
+
+                // Events Dropdown Toggle
+                const eventsButton = document.getElementById('events-button');
+                const eventsMenu = document.getElementById('events-menu');
+                const eventsArrow = document.getElementById('events-arrow');
+
+                if (eventsButton && eventsMenu) {
+                    eventsButton.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        // Close lightbox if open
+                        const lightbox = document.querySelector('.lightbox-modal');
+                        if (lightbox && lightbox.style.display === 'block') {
+                            lightbox.style.display = 'none';
+                        }
+                        
+                        const isHidden = eventsMenu.classList.contains('hidden');
+                        
+                        if (isHidden) {
+                            eventsMenu.classList.remove('hidden');
+                            setTimeout(() => {
+                                eventsMenu.classList.remove('opacity-0', 'scale-95');
+                                eventsMenu.classList.add('opacity-100', 'scale-100');
+                                eventsArrow.classList.add('rotate-180');
+                            }, 10);
+                        } else {
+                            eventsMenu.classList.remove('opacity-100', 'scale-100');
+                            eventsMenu.classList.add('opacity-0', 'scale-95');
+                            eventsArrow.classList.remove('rotate-180');
+                            setTimeout(() => {
+                                eventsMenu.classList.add('hidden');
+                            }, 200);
+                        }
+                    });
+
+                    // Close dropdown when clicking outside
+                    document.addEventListener('click', (e) => {
+                        if (!eventsButton.contains(e.target) && !eventsMenu.contains(e.target)) {
+                            eventsMenu.classList.remove('opacity-100', 'scale-100');
+                            eventsMenu.classList.add('opacity-0', 'scale-95');
+                            eventsArrow.classList.remove('rotate-180');
+                            setTimeout(() => {
+                                eventsMenu.classList.add('hidden');
+                            }, 200);
+                        }
+                    });
+                }
+                
+                // Event Modal Functionality
+                const eventModal = document.getElementById('event-modal');
+                const eventModalClose = document.getElementById('event-modal-close');
+                const eventBtns = document.querySelectorAll('.event-item-btn');
+                
+                if (eventModal && eventBtns.length > 0) {
+                    // Open Modal
+                    eventBtns.forEach(btn => {
+                        btn.addEventListener('click', function(e) {
+                            e.stopPropagation(); // Prevent closing dropdown immediately
+                            
+                            // Get data
+                            const title = this.getAttribute('data-title');
+                            const date = this.getAttribute('data-date');
+                            const venue = this.getAttribute('data-venue');
+                            const theme = this.getAttribute('data-theme');
+                            const attendees = this.getAttribute('data-attendees');
+                            
+                            // Populate Modal
+                            document.getElementById('modal-event-title').textContent = title;
+                            document.getElementById('modal-event-date').textContent = date;
+                            document.getElementById('modal-event-venue').textContent = venue || 'TBD';
+                            document.getElementById('modal-event-theme').textContent = theme || 'No theme specified';
+                            document.getElementById('modal-event-attendees').textContent = attendees || 'TBD';
+                            
+                            // Show Modal
+                            eventModal.classList.remove('hidden');
+                            // Close dropdown
+                            eventsMenu.classList.remove('opacity-100', 'scale-100');
+                            eventsMenu.classList.add('opacity-0', 'scale-95');
+                            eventsArrow.classList.remove('rotate-180');
+                            setTimeout(() => {
+                                eventsMenu.classList.add('hidden');
+                            }, 200);
+                        });
+                    });
+                    
+                    // Close Modal
+                    eventModalClose.addEventListener('click', function() {
+                        eventModal.classList.add('hidden');
+                    });
+                    
+                    // Close on outside click
+                    eventModal.addEventListener('click', function(e) {
+                        if (e.target === eventModal) {
+                            eventModal.classList.add('hidden');
+                        }
+                    });
+                }
+                
+                
+                // Mobile Events Toggle
+                const mobileEventsToggle = document.getElementById('mobile-events-toggle');
+                const mobileEventsList = document.getElementById('mobile-events-list');
+                const mobileEventsArrow = document.getElementById('mobile-events-arrow');
+                
+                if (mobileEventsToggle && mobileEventsList) {
+                    mobileEventsToggle.addEventListener('click', function() {
+                        const isHidden = mobileEventsList.classList.contains('hidden');
+                        
+                        if (isHidden) {
+                            mobileEventsList.classList.remove('hidden');
+                            mobileEventsArrow.classList.add('rotate-180');
+                        } else {
+                            mobileEventsList.classList.add('hidden');
+                            mobileEventsArrow.classList.remove('rotate-180');
+                        }
                     });
                 }
                 
@@ -787,6 +1278,13 @@
                 overflow: hidden;
             }
             
+            /* Event Modal Animation */
+            #event-modal:not(.hidden) {
+                display: flex;
+                animation: fadeIn 0.3s ease-out;
+            }
+
+            
             .lightbox-content {
                 position: relative;
                 margin: auto;
@@ -842,5 +1340,52 @@
                 }
             }
         </style>
+        <!-- Event Details Modal -->
+        <div id="event-modal" class="hidden fixed inset-0 z-[60] bg-gray-900/40 flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all scale-100 relative">
+                <!-- Modal Header -->
+                <div class="bg-gradient-to-r from-orange-500 to-red-600 p-6 relative">
+                    <button id="event-modal-close" class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                    <h3 id="modal-event-title" class="text-2xl font-bold text-white mb-1 drop-shadow-md">Event Title</h3>
+                    <div class="flex items-center text-orange-100 text-sm font-medium">
+                        <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <span id="modal-event-date">Date</span>
+                    </div>
+                </div>
+                
+                <!-- Modal Body -->
+                <div class="p-6 space-y-6">
+                    <!-- Venue -->
+                    <div>
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Venue</h4>
+                        <div class="flex items-start text-gray-800">
+                            <svg class="w-5 h-5 text-orange-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span id="modal-event-venue" class="font-medium">Venue Name</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Theme -->
+                    <div>
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Theme</h4>
+                        <div class="p-3 bg-orange-50 border border-orange-100 rounded-lg text-orange-900 text-sm font-medium italic">
+                            <span id="modal-event-theme">Event Theme</span>
+                        </div>
+                    </div>
+
+                    <!-- Attendees -->
+                     <div>
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Attendees</h4>
+                        <div class="flex items-start text-gray-700 text-sm">
+                            <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                            <span id="modal-event-attendees">Target Attendees</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
     </body>
 </html>
