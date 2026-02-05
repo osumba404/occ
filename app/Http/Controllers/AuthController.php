@@ -80,12 +80,17 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $credentials = $request->validate([
+        $request->validate([
             'phone_number' => 'required|string',
-            'password' => 'required|string',
+            'national_id' => 'required|string',
         ]);
 
-        if (Auth::attempt($credentials)) {
+        $user = User::where('phone_number', $request->phone_number)
+                    ->where('national_id', $request->national_id)
+                    ->first();
+
+        if ($user) {
+            Auth::login($user);
             $request->session()->regenerate();
             return redirect()->intended('/dashboard');
         }

@@ -175,18 +175,29 @@
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="md:col-span-2 relative">
                                     <label class="block text-sm font-semibold text-gray-700 mb-2">Institution</label>
-                                    <div class="relative">
-                                        <i data-lucide="graduation-cap" class="form-input-icon"></i>
-                                        <select id="institution_id" name="institution_id" required 
-                                                class="form-input appearance-none bg-no-repeat bg-[right_1rem_center] bg-[length:1em_1em]"
-                                                style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 fill=%22none%22 viewBox=%220 0 24 24%22 stroke=%22currentColor%22%3E%3Cpath stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%222%22 d=%22M19 9l-7 7-7-7%22 /%3E%3C/svg%3E');">
-                                            <option value="">Select Institution</option>
-                                            @foreach($institutions as $institution)
-                                                <option value="{{ $institution->id }}" {{ old('institution_id') == $institution->id ? 'selected' : '' }}>
-                                                    {{ $institution->name }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+                                    <div class="relative space-y-2">
+                                        <!-- Institution Search Bar -->
+                                        <div class="relative">
+                                            <i data-lucide="search" class="form-input-icon"></i>
+                                            <input type="text" id="institution_search" 
+                                                   class="form-input" 
+                                                   placeholder="Search for your institution...">
+                                        </div>
+                                        
+                                        <!-- Institution Dropdown -->
+                                        <div class="relative">
+                                            <i data-lucide="graduation-cap" class="form-input-icon"></i>
+                                            <select id="institution_id" name="institution_id" required 
+                                                    class="form-input appearance-none bg-no-repeat bg-[right_1rem_center] bg-[length:1em_1em]"
+                                                    style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 fill=%22none%22 viewBox=%220 0 24 24%22 stroke=%22currentColor%22%3E%3Cpath stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%222%22 d=%22M19 9l-7 7-7-7%22 /%3E%3C/svg%3E');">
+                                                <option value="">Select Institution</option>
+                                                @foreach($institutions as $institution)
+                                                    <option value="{{ $institution->id }}" {{ old('institution_id') == $institution->id ? 'selected' : '' }}>
+                                                        {{ $institution->name }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -357,6 +368,33 @@
                     populateDropdown(`/api/wards/${subcountyId}`, wardSelect, 'Select Ward');
                 } else {
                     wardSelect.disabled = true;
+                }
+            });
+
+            // Institution Search Filtering
+            const institutionSearch = document.getElementById('institution_search');
+            const institutionSelect = document.getElementById('institution_id');
+            const originalOptions = Array.from(institutionSelect.options);
+
+            institutionSearch.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase().trim();
+                
+                // Clear the select
+                institutionSelect.innerHTML = '';
+                
+                // Add back the default option
+                institutionSelect.appendChild(originalOptions[0]);
+
+                // Filter and add back matching options
+                originalOptions.slice(1).forEach(option => {
+                    if (option.text.toLowerCase().includes(searchTerm)) {
+                        institutionSelect.appendChild(option);
+                    }
+                });
+
+                // If only one option (excluding placeholder), select it if search term exactly matches
+                if (institutionSelect.options.length === 2 && searchTerm === institutionSelect.options[1].text.toLowerCase().trim()) {
+                    institutionSelect.selectedIndex = 1;
                 }
             });
         });
