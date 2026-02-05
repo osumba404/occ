@@ -173,30 +173,34 @@
                             </h3>
                             
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="md:col-span-2 relative">
+                                <div class="md:col-span-2 relative" id="institution-search-wrapper">
                                     <label class="block text-sm font-semibold text-gray-700 mb-2">Institution</label>
-                                    <div class="relative space-y-2">
-                                        <!-- Institution Search Bar -->
-                                        <div class="relative">
-                                            <i data-lucide="search" class="form-input-icon"></i>
-                                            <input type="text" id="institution_search" 
-                                                   class="form-input" 
-                                                   placeholder="Search for your institution...">
-                                        </div>
+                                    <div class="relative group">
+                                        <i data-lucide="graduation-cap" class="form-input-icon transition-colors group-focus-within:text-orange-500 z-10"></i>
+                                        <input type="text" id="institution_display" 
+                                               class="form-input" 
+                                               placeholder="Type to search your institution..."
+                                               autocomplete="off">
                                         
-                                        <!-- Institution Dropdown -->
-                                        <div class="relative">
-                                            <i data-lucide="graduation-cap" class="form-input-icon"></i>
-                                            <select id="institution_id" name="institution_id" required 
-                                                    class="form-input appearance-none bg-no-repeat bg-[right_1rem_center] bg-[length:1em_1em]"
-                                                    style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 fill=%22none%22 viewBox=%220 0 24 24%22 stroke=%22currentColor%22%3E%3Cpath stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%222%22 d=%22M19 9l-7 7-7-7%22 /%3E%3C/svg%3E');">
-                                                <option value="">Select Institution</option>
+                                        <!-- Hidden input to store the actual ID -->
+                                        <input type="hidden" id="institution_id" name="institution_id" value="{{ old('institution_id') }}">
+
+                                        <!-- Suggestions Dropdown -->
+                                        <div id="institution_suggestions" 
+                                             class="hidden absolute z-50 left-0 right-0 mt-2 max-h-60 overflow-y-auto bg-white rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 border border-gray-100">
+                                            <div class="py-1" id="suggestions_list">
                                                 @foreach($institutions as $institution)
-                                                    <option value="{{ $institution->id }}" {{ old('institution_id') == $institution->id ? 'selected' : '' }}>
+                                                    <button type="button" 
+                                                            class="w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-700 transition-colors border-b border-gray-50 last:border-0 suggestion-item"
+                                                            data-id="{{ $institution->id }}"
+                                                            data-name="{{ $institution->name }}">
                                                         {{ $institution->name }}
-                                                    </option>
+                                                    </button>
                                                 @endforeach
-                                            </select>
+                                            </div>
+                                            <div id="no_suggestions" class="hidden px-4 py-3 text-sm text-gray-500 italic">
+                                                No matching institutions found
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -371,30 +375,69 @@
                 }
             });
 
-            // Institution Search Filtering
-            const institutionSearch = document.getElementById('institution_search');
-            const institutionSelect = document.getElementById('institution_id');
-            const originalOptions = Array.from(institutionSelect.options);
+            // Institution Search Filtering & Suggestions Logic
+            const institutionWrapper = document.getElementById('institution-search-wrapper');
+            const institutionDisplay = document.getElementById('institution_display');
+            const institutionIdInput = document.getElementById('institution_id');
+            const suggestionsDropdown = document.getElementById('institution_suggestions');
+            const suggestionsList = document.getElementById('suggestions_list');
+            const suggestionItems = document.querySelectorAll('.suggestion-item');
+            const noSuggestions = document.getElementById('no_suggestions');
 
-            institutionSearch.addEventListener('input', function() {
-                const searchTerm = this.value.toLowerCase().trim();
-                
-                // Clear the select
-                institutionSelect.innerHTML = '';
-                
-                // Add back the default option
-                institutionSelect.appendChild(originalOptions[0]);
+            // Set initial display if ID exists (old input)
+            if (institutionIdInput.value) {
+                const selectedSuggestion = Array.from(suggestionItems).find(item => item.dataset.id === institutionIdInput.value);
+                if (selectedSuggestion) {
+                    institutionDisplay.value = selectedSuggestion.dataset.name;
+                }
+            }
 
-                // Filter and add back matching options
-                originalOptions.slice(1).forEach(option => {
-                    if (option.text.toLowerCase().includes(searchTerm)) {
-                        institutionSelect.appendChild(option);
+            institutionDisplay.addEventListener('focus', () => {
+                suggestionsDropdown.classList.remove('hidden');
+                filterSuggestions();
+            });
+
+            institutionDisplay.addEventListener('input', () => {
+                suggestionsDropdown.classList.remove('hidden');
+                institutionIdInput.value = ''; // Clear ID while typing
+                filterSuggestions();
+            });
+
+            function filterSuggestions() {
+                const searchTerm = institutionDisplay.value.toLowerCase().trim();
+                let matchCount = 0;
+
+                suggestionItems.forEach(item => {
+                    const name = item.dataset.name.toLowerCase();
+                    if (name.includes(searchTerm)) {
+                        item.classList.remove('hidden');
+                        matchCount++;
+                    } else {
+                        item.classList.add('hidden');
                     }
                 });
 
-                // If only one option (excluding placeholder), select it if search term exactly matches
-                if (institutionSelect.options.length === 2 && searchTerm === institutionSelect.options[1].text.toLowerCase().trim()) {
-                    institutionSelect.selectedIndex = 1;
+                if (matchCount === 0) {
+                    noSuggestions.classList.remove('hidden');
+                    suggestionsList.classList.add('hidden');
+                } else {
+                    noSuggestions.classList.add('hidden');
+                    suggestionsList.classList.remove('hidden');
+                }
+            }
+
+            suggestionItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    institutionDisplay.value = item.dataset.name;
+                    institutionIdInput.value = item.dataset.id;
+                    suggestionsDropdown.classList.add('hidden');
+                });
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!institutionWrapper.contains(e.target)) {
+                    suggestionsDropdown.classList.add('hidden');
                 }
             });
         });
