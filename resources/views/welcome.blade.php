@@ -3,7 +3,55 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <title>{{ config('app.name', 'OCC') }}</title>
+        
+        <!-- SEO Meta Tags -->
+        <title>{{ config('app.name', 'ODM Comrades Chapter') }} - Empowering Youth & Students</title>
+        <meta name="description" content="Official website of the ODM Comrades Chapter. Empowering youth and students through reputable leadership, inclusivity, and progressive change. Join the movement today!">
+        <meta name="keywords" content="ODM, Comrades Chapter, ODM Youth, Kenya Politics, Student Leadership, Raila Odinga, ODM Party, University Politics, Youth Empowerment">
+        <meta name="author" content="ODM Comrades Chapter">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="{{ url('/') }}">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ url('/') }}">
+        <meta property="og:title" content="ODM Comrades Chapter - Empowering Youth & Students">
+        <meta property="og:description" content="Join the ODM Comrades Chapter. We champion reputable leadership, inclusivity, and progressive change for Kenyan youth and students.">
+        <meta property="og:image" content="{{ asset('images/logo.jpeg') }}">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="{{ url('/') }}">
+        <meta property="twitter:title" content="ODM Comrades Chapter - Empowering Youth & Students">
+        <meta property="twitter:description" content="Join the ODM Comrades Chapter. We champion reputable leadership, inclusivity, and progressive change for Kenyan youth and students.">
+        <meta property="twitter:image" content="{{ asset('images/logo.jpeg') }}">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/jpeg" href="{{ asset('images/logo.jpeg') }}">
+
+        <!-- Structured Data (JSON-LD) -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ODM Comrades Chapter",
+          "url": "{{ url('/') }}",
+          "logo": "{{ asset('images/logo.jpeg') }}",
+          "description": "The student and youth wing of the Orange Democratic Movement, dedicated to empowering comrades through progressive leadership.",
+          "foundingDate": "2025",
+          "founders": [
+            {
+              "@type": "Person",
+              "name": "Raila Amolo Odinga"
+            }
+          ],
+          "sameAs": [
+            "https://twitter.com/TheODMparty",
+            "https://www.facebook.com/TheODMParty"
+          ]
+        }
+        </script>
+
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
         
