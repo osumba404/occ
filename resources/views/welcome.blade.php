@@ -28,9 +28,9 @@
                 <div class="flex justify-between h-16">
                     <div class="flex flex-1 items-center min-w-0">
                         <!-- Logo / Brand Name -->
-                        <a href="{{ url('/') }}" class="text-lg sm:text-2xl font-bold text-orange-600 tracking-tight flex items-center gap-2 sm:gap-3">
+                        <a href="{{ url('/') }}" class="text-lg sm:text-2xl font-bold text-orange-600 tracking-tight flex items-center gap-1.5 sm:gap-3">
                             <img src="{{ asset('images/logo.jpeg') }}" alt="ODM Logo" class="h-8 w-8 sm:h-10 sm:w-10 object-contain flex-shrink-0">
-                            <span class="text-blue-900 hidden sm:inline">ODM</span> 
+                            <span class="text-blue-900">ODM</span> 
                             <span class="text-blue-900">Comrades</span>
                         </a>
                     </div>
