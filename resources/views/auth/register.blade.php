@@ -33,17 +33,14 @@
             }
         }
     </script>
-    <style>
+    <style type="text/tailwindcss">
         .form-card {
             background: #ffffff;
             border: 1px solid #e5e7eb;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
-        .form-input-icon {
-            @apply absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5;
-        }
         .form-input {
-            @apply pl-10 w-full rounded-xl border border-gray-200 py-3 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all outline-none bg-gray-50/50;
+            @apply w-full rounded-xl border border-gray-300 py-3 px-4 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all outline-none bg-gray-50/50;
         }
     </style>
 </head>
@@ -128,39 +125,39 @@
                             
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="relative">
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">National ID</label>
-                                    <div class="relative">
-                                        <i data-lucide="id-card" class="form-input-icon"></i>
-                                        <input name="national_id" type="text" value="{{ old('national_id') }}" required 
-                                               class="form-input" placeholder="e.g. 12345678">
-                                    </div>
+                                    <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                                        <i data-lucide="id-card" class="w-4 h-4 text-orange-600"></i>
+                                        National ID
+                                    </label>
+                                    <input name="national_id" type="text" value="{{ old('national_id') }}" required 
+                                           class="form-input" placeholder="e.g. 12345678">
                                 </div>
                                 
                                 <div class="relative">
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
-                                    <div class="relative">
-                                        <i data-lucide="phone" class="form-input-icon"></i>
-                                        <input name="phone_number" type="text" value="{{ old('phone_number') }}" required 
-                                               class="form-input" placeholder="e.g. 0712345678">
-                                    </div>
+                                    <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                                        <i data-lucide="phone" class="w-4 h-4 text-orange-600"></i>
+                                        Phone Number
+                                    </label>
+                                    <input name="phone_number" type="text" value="{{ old('phone_number') }}" required 
+                                           class="form-input" placeholder="e.g. 0712345678">
                                 </div>
 
                                 <div class="relative">
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Surname</label>
-                                    <div class="relative">
-                                        <i data-lucide="user" class="form-input-icon"></i>
-                                        <input name="surname" type="text" value="{{ old('surname') }}" required 
-                                               class="form-input" placeholder="Legal surname">
-                                    </div>
+                                    <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                                        <i data-lucide="user" class="w-4 h-4 text-orange-600"></i>
+                                        Surname
+                                    </label>
+                                    <input name="surname" type="text" value="{{ old('surname') }}" required 
+                                           class="form-input" placeholder="Legal surname">
                                 </div>
 
                                 <div class="relative">
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">First/Middle Name</label>
-                                    <div class="relative">
-                                        <i data-lucide="user-plus" class="form-input-icon"></i>
-                                        <input name="first_middle_name" type="text" value="{{ old('first_middle_name') }}" required 
-                                               class="form-input" placeholder="Other names">
-                                    </div>
+                                    <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                                        <i data-lucide="user-plus" class="w-4 h-4 text-orange-600"></i>
+                                        First/Middle Name
+                                    </label>
+                                    <input name="first_middle_name" type="text" value="{{ old('first_middle_name') }}" required 
+                                           class="form-input" placeholder="Other names">
                                 </div>
                             </div>
                         </div>
@@ -174,9 +171,11 @@
                             
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="md:col-span-2 relative" id="institution-search-wrapper">
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Institution</label>
+                                    <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                                        <i data-lucide="graduation-cap" class="w-4 h-4 text-orange-600"></i>
+                                        Institution
+                                    </label>
                                     <div class="relative group">
-                                        <i data-lucide="graduation-cap" class="form-input-icon transition-colors group-focus-within:text-orange-500 z-10"></i>
                                         <input type="text" id="institution_display" 
                                                class="form-input" 
                                                placeholder="Type to search your institution..."
@@ -206,7 +205,10 @@
                                 </div>
 
                                 <div class="relative">
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Region</label>
+                                    <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                                        <i data-lucide="map" class="w-4 h-4 text-orange-600"></i>
+                                        Voting Region
+                                    </label>
                                     <select id="region_id" name="region_id" required class="form-input transition-all">
                                         <option value="">Select Region</option>
                                         @foreach($regions as $region)
@@ -218,40 +220,49 @@
                                 </div>
 
                                 <div class="relative">
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">County</label>
+                                    <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                                        <i data-lucide="map-pin" class="w-4 h-4 text-orange-600"></i>
+                                        County
+                                    </label>
                                     <select id="county_id" name="county_id" required class="form-input transition-all disabled:opacity-50" disabled>
                                         <option value="">Select County</option>
                                     </select>
                                 </div>
 
                                 <div class="relative">
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Constituency</label>
+                                    <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                                        <i data-lucide="map-pin" class="w-4 h-4 text-orange-600"></i>
+                                        Constituency
+                                    </label>
                                     <select id="subcounty_id" name="subcounty_id" required class="form-input transition-all disabled:opacity-50" disabled>
                                         <option value="">Select Constituency</option>
                                     </select>
                                 </div>
 
                                 <div class="relative">
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Ward</label>
+                                    <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                                        <i data-lucide="map-pin" class="w-4 h-4 text-orange-600"></i>
+                                        Ward
+                                    </label>
                                     <select id="ward_id" name="ward_id" required class="form-input transition-all disabled:opacity-50" disabled>
                                         <option value="">Select Ward</option>
                                     </select>
                                 </div>
 
                                 <div class="md:col-span-2 relative">
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Polling Station</label>
-                                    <div class="relative">
-                                        <i data-lucide="map-pin" class="form-input-icon"></i>
-                                        <input id="polling_station_name" name="polling_station_name" type="text" 
-                                               value="{{ old('polling_station_name') }}" required 
-                                               class="form-input" placeholder="Search or enter your polling station">
-                                    </div>
+                                    <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                                        <i data-lucide="map-pin" class="w-4 h-4 text-orange-600"></i>
+                                        Polling Station
+                                    </label>
+                                    <input id="polling_station_name" name="polling_station_name" type="text" 
+                                            value="{{ old('polling_station_name') }}" required 
+                                            class="form-input" placeholder="Search or enter your polling station">
                                 </div>
                             </div>
                         </div>
 
                         <!-- Section: Security -->
-                        <div class="mb-10">
+                        <!-- <div class="mb-10">
                             <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6 flex items-center gap-2">
                                 <span class="w-8 h-[1px] bg-gray-200"></span>
                                 Security
@@ -284,7 +295,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <!-- Submit Button -->
                         <div class="flex flex-col items-center gap-6 mt-12">
@@ -443,19 +454,19 @@
         });
 
         // Password Toggle Logic
-        function togglePassword(inputId, btn) {
-            const input = document.getElementById(inputId);
-            const icon = btn.querySelector('i');
+        // function togglePassword(inputId, btn) {
+        //     const input = document.getElementById(inputId);
+        //     const icon = btn.querySelector('i');
             
-            if (input.type === 'password') {
-                input.type = 'text';
-                icon.setAttribute('data-lucide', 'eye-off');
-            } else {
-                input.type = 'password';
-                icon.setAttribute('data-lucide', 'eye');
-            }
-            lucide.createIcons();
-        }
+        //     if (input.type === 'password') {
+        //         input.type = 'text';
+        //         icon.setAttribute('data-lucide', 'eye-off');
+        //     } else {
+        //         input.type = 'password';
+        //         icon.setAttribute('data-lucide', 'eye');
+        //     }
+        //     lucide.createIcons();
+        // }
     </script>
 </body>
 </html>

@@ -53,16 +53,17 @@
                     To become an ODM Comrades Chapter member
                 </p>
                 
+                
                 <div class="space-y-6 sm:space-y-8">
-                    <div class="text-center">
+                    <!-- <div class="text-center">
                         <p class="text-white text-xl sm:text-2xl font-semibold mb-4">Dial</p>
                         <p class="text-white text-3xl sm:text-4xl md:text-5xl font-bold">*483*036#</p>
                     </div>
                     
-                    <div class="text-white text-2xl sm:text-3xl md:text-4xl font-bold">OR</div>
+                    <div class="text-white text-2xl sm:text-3xl md:text-4xl font-bold">OR</div> -->
                     
                     <a href="{{ route('register') }}" class="inline-flex items-center px-6 sm:px-8 lg:px-12 py-3 sm:py-4 border border-transparent text-base sm:text-lg lg:text-xl font-medium rounded-xl text-white hover:bg-orange-600 transition duration-150 ease-in-out transform hover:scale-105" style="background-color: #fb923c;">
-                        Become a Member Today
+                        Clik to Register
                     </a>
                 </div>
             </div>

@@ -33,17 +33,14 @@
             }
         }
     </script>
-    <style>
+    <style type="text/tailwindcss">
         .form-card {
             background: #ffffff;
             border: 1px solid #e5e7eb;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
-        .form-input-icon {
-            @apply absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5;
-        }
         .form-input {
-            @apply pl-10 w-full rounded-xl border border-gray-200 py-3 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all outline-none bg-gray-50/50;
+            @apply w-full rounded-xl border border-gray-300 py-3 px-4 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all outline-none bg-gray-50/50;
         }
     </style>
 </head>
@@ -95,23 +92,23 @@
                     
                     <div class="space-y-5">
                         <div class="relative">
-                            <label for="phone_number" class="block text-sm font-semibold text-gray-700 mb-2 ml-1">Phone Number</label>
-                            <div class="relative group">
-                                <i data-lucide="phone" class="form-input-icon transition-colors group-focus-within:text-orange-500"></i>
-                                <input id="phone_number" name="phone_number" type="text" required 
-                                       class="form-input" 
-                                       placeholder="Enter your phone number">
-                            </div>
+                            <label for="phone_number" class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2 ml-1">
+                                <i data-lucide="phone" class="w-4 h-4 text-orange-600"></i>
+                                Phone Number
+                            </label>
+                            <input id="phone_number" name="phone_number" type="text" required 
+                                   class="form-input" 
+                                   placeholder="Enter your phone number">
                         </div>
 
                         <div class="relative">
-                            <label for="national_id" class="block text-sm font-semibold text-gray-700 mb-2 ml-1">National ID</label>
-                            <div class="relative group">
-                                <i data-lucide="id-card" class="form-input-icon transition-colors group-focus-within:text-orange-500"></i>
-                                <input id="national_id" name="national_id" type="text" required 
-                                       class="form-input" 
-                                       placeholder="Enter your National ID">
-                            </div>
+                            <label for="national_id" class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2 ml-1">
+                                <i data-lucide="id-card" class="w-4 h-4 text-orange-600"></i>
+                                National ID
+                            </label>
+                            <input id="national_id" name="national_id" type="text" required 
+                                   class="form-input" 
+                                   placeholder="Enter your National ID">
                         </div>
                     </div>
 

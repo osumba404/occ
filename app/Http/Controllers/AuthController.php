@@ -36,7 +36,6 @@ class AuthController extends Controller
             'subcounty_id' => 'required|exists:subcounties,id',
             'ward_id' => 'required|exists:wards,id',
             'polling_station_name' => 'required|string|max:255',
-            'password' => 'required|string|min:8|confirmed',
         ]);
 
         $user = User::create([
@@ -46,7 +45,6 @@ class AuthController extends Controller
             'first_middle_name' => $request->first_middle_name,
             'institution_id' => $request->institution_id,
             'polling_station_id' => $this->createPollingStation($request->polling_station_name, $request->ward_id),
-            'password' => Hash::make($request->password),
         ]);
 
         Auth::login($user);

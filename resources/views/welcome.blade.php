@@ -32,6 +32,7 @@
                             <img src="{{ asset('images/logo.jpeg') }}" alt="ODM Logo" class="h-8 w-8 sm:h-10 sm:w-10 object-contain flex-shrink-0">
                             <span class="text-blue-900">ODM</span> 
                             <span class="text-blue-900">Comrades</span>
+                            <span class="text-blue-900">Chapter</span>
                         </a>
                     </div>
                     <!-- Desktop Navigation -->
@@ -488,28 +489,24 @@
                             </div>
                         </div>
 
-                        <!-- Leader 7: Blank (IT Team) -->
-                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/10 transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(100,116,139,0.4)] cursor-pointer bg-gray-900">
-                             <!-- Placeholder Silhouette -->
-                             <div class="absolute inset-0 flex items-center justify-center bg-gray-800">
-                                <svg class="w-32 h-32 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                                </svg>
-                             </div>
-                            
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-500"></div>
+                        <!-- Leader 7: Evans (IT Team) -->
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/10 transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(100,116,139,0.4)] cursor-pointer">
+                            <img src="{{ asset('images/evans5.jpg') }}" alt="IT Team" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
                             
                             <div class="absolute bottom-0 w-full p-6 backdrop-blur-md bg-black/40 border-t border-white/10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-out">
-                                <h3 class="text-white text-3xl font-bold mb-1 font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Evans Atula</h3>
+                                <h3 class="text-white text-3xl font-bold mb-1 font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Evans A. Osumba</h3>
                                 <div class="flex items-center gap-2 mb-4">
-                                    <div class="w-8 h-0.5 bg-gray-500 shadow-[0_0_10px_gray]"></div>
-                                    <p class="text-gray-400 font-bold uppercase tracking-[0.2em] text-xs text-shadow-sm">IT Specialist</p>
+                                    <div class="w-8 h-0.5 bg-blue-400 shadow-[0_0_10px_skyblue]"></div>
+                                    <p class="text-blue-300 font-bold uppercase tracking-[0.2em] text-xs text-shadow-sm">IT Specialist</p>
                                 </div>
                                 <p class="text-gray-200 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 translate-y-2 group-hover:translate-y-0 transform">
                                     "Unity and discipline within the party are the pillars of our strength."
                                 </p>
                             </div>
                         </div>
+
+                      
                     </div>
                 </div>
             </section>

@@ -59,8 +59,62 @@ class AdminController extends Controller
 
     public function users(Request $request)
     {
-        $users = User::with(['institution', 'pollingStation'])->paginate(25);
-        return view('admin.users', compact('users'));
+        $query = User::with(['institution', 'pollingStation.ward.subcounty.county']);
+
+        // Apply filters
+        if ($request->filled('county')) {
+            $query->whereHas('pollingStation.ward.subcounty.county', function($q) use ($request) {
+                $q->where('iebc_code', $request->county);
+            });
+        }
+
+        if ($request->filled('constituency')) {
+            $query->whereHas('pollingStation.ward.subcounty', function($q) use ($request) {
+                $q->where('iebc_code', $request->constituency);
+            });
+        }
+
+        if ($request->filled('ward')) {
+            $query->whereHas('pollingStation.ward', function($q) use ($request) {
+                $q->where('id', $request->ward);
+            });
+        }
+
+        // Check for sort parameters
+        if ($request->has('sort_by') && $request->has('sort_dir')) {
+            $sortBy = $request->get('sort_by');
+            $sortDir = $request->get('sort_dir') === 'desc' ? 'desc' : 'asc';
+
+            if ($sortBy === 'county') {
+                $query->select('users.*')
+                    ->leftJoin('polling_stations as ps', 'users.polling_station_id', '=', 'ps.id')
+                    ->leftJoin('wards as w', 'ps.ward_id', '=', 'w.id')
+                    ->leftJoin('subcounties as sc', 'w.subcounty_code', '=', 'sc.iebc_code')
+                    ->leftJoin('counties as c', 'sc.county_code', '=', 'c.iebc_code')
+                    ->orderBy('c.name', $sortDir);
+            } elseif ($sortBy === 'constituency') {
+                $query->select('users.*')
+                    ->leftJoin('polling_stations as ps', 'users.polling_station_id', '=', 'ps.id')
+                    ->leftJoin('wards as w', 'ps.ward_id', '=', 'w.id')
+                    ->leftJoin('subcounties as sc', 'w.subcounty_code', '=', 'sc.iebc_code')
+                    ->orderBy('sc.name', $sortDir);
+            } elseif ($sortBy === 'ward') {
+                $query->select('users.*')
+                    ->leftJoin('polling_stations as ps', 'users.polling_station_id', '=', 'ps.id')
+                    ->leftJoin('wards as w', 'ps.ward_id', '=', 'w.id')
+                    ->orderBy('w.name', $sortDir);
+            } else {
+                // Default sorting (e.g., by name if implemented, or created_at)
+                $query->orderBy('created_at', 'desc');
+            }
+        } else {
+            $query->orderBy('created_at', 'desc');
+        }
+
+        $users = $query->paginate(25)->appends($request->all());
+        $counties = County::orderBy('name')->get();
+        
+        return view('admin.users', compact('users', 'counties'));
     }
 
     public function showUser($id)
@@ -83,9 +137,12 @@ class AdminController extends Controller
         $users = User::with(['institution', 'pollingStation.ward.subcounty.county.region'])
             ->get()
             ->map(function ($user) {
+                // Ensure phone number is strictly digits
+                $phone = preg_replace('/[^0-9]/', '', $user->phone_number);
+                
                 return [
                     'National ID' => $user->national_id,
-                    'Phone Number' => $user->phone_number,
+                    'Phone Number' => $phone,
                     'Surname' => $user->surname,
                     'First/Middle Name' => $user->first_middle_name,
                     'Institution' => $user->institution ? $user->institution->name : 'N/A',
@@ -96,8 +153,7 @@ class AdminController extends Controller
                     'Constituency' => $user->pollingStation && $user->pollingStation->ward && $user->pollingStation->ward->subcounty ? $user->pollingStation->ward->subcounty->name : 'N/A',
                     'County' => $user->pollingStation && $user->pollingStation->ward && $user->pollingStation->ward->subcounty && $user->pollingStation->ward->subcounty->county ? $user->pollingStation->ward->subcounty->county->name : 'N/A',
                     'Region' => $user->pollingStation && $user->pollingStation->ward && $user->pollingStation->ward->subcounty && $user->pollingStation->ward->subcounty->county && $user->pollingStation->ward->subcounty->county->region ? $user->pollingStation->ward->subcounty->county->region->name : 'N/A',
-                    'Account Type' => $user->is_admin ? 'Administrator' : 'Member',
-                    'Registration Date' => $user->created_at->format('Y-m-d H:i:s'),
+
                 ];
             });
 
@@ -128,7 +184,7 @@ class AdminController extends Controller
             $file = fopen('php://output', 'w');
             
             // Add CSV header
-            if (!empty($data)) {
+            if ($data->count() > 0) {
                 fputcsv($file, array_keys($data->first()));
             }
             
@@ -145,13 +201,54 @@ class AdminController extends Controller
 
     private function exportXlsx($data, $filename)
     {
-        // For now, redirect to CSV as XLSX requires additional packages
-        return $this->exportCsv($data, $filename);
+        $headers = [
+            'Content-Type' => 'application/vnd.ms-excel',
+            'Content-Disposition' => 'attachment; filename="' . $filename . '.xls"',
+        ];
+
+        $callback = function() use ($data) {
+            $file = fopen('php://output', 'w');
+            
+            // Output HTML Table for Excel
+            fwrite($file, '<html xmlns:x="urn:schemas-microsoft-com:office:excel">');
+            fwrite($file, '<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">');
+            fwrite($file, '<!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>Users</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]-->');
+            fwrite($file, '<style>td{mso-number-format:"\@";}</style>'); // Default to text
+            fwrite($file, '</head><body>');
+            fwrite($file, '<table><thead><tr>');
+            
+            if ($data->count() > 0) {
+                foreach (array_keys($data->first()) as $header) {
+                    fwrite($file, '<th>' . $header . '</th>');
+                }
+            }
+            fwrite($file, '</tr></thead><tbody>');
+            
+            foreach ($data as $row) {
+                fwrite($file, '<tr>');
+                foreach ($row as $key => $cell) {
+                    // Force text format for Phone Number to preserve leading zeros if needed
+                    // Using mso-number-format:"\@" in CSS above handles this generally,
+                    // but explicit style helps.
+                    $style = '';
+                    if ($key === 'Phone Number') {
+                        $style = 'style="mso-number-format:\@;"';
+                    }
+                    fwrite($file, '<td ' . $style . '>' . htmlspecialchars($cell ?? '') . '</td>');
+                }
+                fwrite($file, '</tr>');
+            }
+            
+            fwrite($file, '</tbody></table></body></html>');
+            fclose($file);
+        };
+
+        return response()->stream($callback, 200, $headers);
     }
 
     private function exportPdf($data, $filename)
     {
-        // For now, redirect to CSV as PDF requires additional packages
+        // For now, redirect to CSV
         return $this->exportCsv($data, $filename);
     }
 
