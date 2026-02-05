@@ -379,33 +379,33 @@
             </section>
 
             <!-- Leadership Section -->
-            <section id="leadership" class="py-24 bg-gradient-to-br from-slate-900 via-[#0f172a] to-black relative overflow-hidden">
-                <!-- Background Pattern (Optional for texture) -->
-                <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#475569 1px, transparent 1px); background-size: 32px 32px;"></div>
+            <section id="leadership" class="py-24 bg-[#0a0f1c] relative overflow-hidden">
+                <!-- Subtle Texture -->
+                <div class="absolute inset-0 opacity-5" style="background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');"></div>
                 
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">
-                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 via-white to-blue-400 animate-gradient">
-                            Our Leadership
-                        </span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-center mb-20 text-white tracking-tight">
+                        Our Leadership
                     </h2>
                     <div class="flex flex-wrap justify-center gap-10">
                         <!-- Leader 1: Raila Amolo Odinga -->
-                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/10 transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(234,88,12,0.4)] cursor-pointer">
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
                             <img src="{{ asset('images/Raila Amolo Odinga- Party leader.jpeg') }}" alt="Party Leader" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
                             
-                            <!-- Glass Pane -->
-                            <div class="absolute bottom-0 w-full p-6 backdrop-blur-md bg-black/40 border-t border-white/10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-out">
-                                <div class="absolute -top-12 right-6 w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(234,88,12,0.6)] group-hover:scale-110 transition-transform duration-500">
-                                   <span class="text-xl">👑</span>
-                                </div>
-                                <h3 class="text-white text-3xl font-bold mb-1 font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Raila Amolo Odinga</h3>
+                            <!-- King Badge - Top Right -->
+                            <div class="absolute top-6 right-6 w-12 h-12 bg-orange-600 rounded-2xl flex items-center justify-center shadow-2xl transform rotate-12 group-hover:rotate-0 transition-transform duration-500 z-20">
+                               <span class="text-2xl">👑</span>
+                            </div>
+
+                            <!-- Info Overlay -->
+                            <div class="absolute bottom-0 w-full p-8 bg-black/60 backdrop-blur-md border-t border-white/10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                                <h3 class="text-white text-3xl font-bold mb-2 font-sans">Raila Amolo Odinga</h3>
                                 <div class="flex items-center gap-2 mb-4">
-                                    <div class="w-8 h-0.5 bg-orange-500 shadow-[0_0_10px_orange]"></div>
-                                    <p class="text-orange-400 font-bold uppercase tracking-[0.2em] text-xs text-shadow-sm">Party Leader</p>
+                                    <div class="w-10 h-0.5 bg-orange-500"></div>
+                                    <p class="text-orange-500 font-bold uppercase tracking-widest text-xs">Party Leader</p>
                                 </div>
-                                <p class="text-gray-200 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 translate-y-2 group-hover:translate-y-0 transform">
+                                <p class="text-gray-300 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
                                     "We stand firm in our resolve to build a democratic and inclusive nation."
                                 </p>
                             </div>
