@@ -345,7 +345,7 @@
                         <div class="slide absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('{{ asset('images/Raila2.webp') }}'); filter: brightness(1.1) contrast(1.1) saturate(1.2); opacity: 1; transition: opacity 4s ease-in-out;"></div>
                         <div class="slide absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('{{ asset('images/Raila3.webp') }}'); filter: brightness(1.1) contrast(1.1) saturate(1.2); opacity: 0; transition: opacity 4s ease-in-out;"></div>
                         <div class="slide absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('{{ asset('images/Raila4.webp') }}'); filter: brightness(1.1) contrast(1.1) saturate(1.2); opacity: 0; transition: opacity 4s ease-in-out;"></div>
-                        <div class="slide absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('{{ asset('images/ggg.jpeg') }}'); filter: brightness(1.1) contrast(1.1) saturate(1.2); opacity: 0; transition: opacity 4s ease-in-out;"></div>
+                        <div class="slide absolute inset-0 bg-cover bg-top bg-no-repeat" style="background-image: url('{{ asset('images/ggg.jpeg') }}'); filter: brightness(1.1) contrast(1.1) saturate(1.2); opacity: 0; transition: opacity 4s ease-in-out;"></div>
                     </div>
                     <!-- Lighter Overlay for text readability while keeping faces visible -->
                     <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-blue-900/60"></div>
