@@ -32,8 +32,8 @@
         <!-- Structured Data (JSON-LD) -->
         <script type="application/ld+json">
         {
-          "@context": "https://schema.org",
-          "@type": "Organization",
+          "@@context": "https://schema.org",
+          "@@type": "Organization",
           "name": "ODM Comrades Chapter",
           "url": "{{ url('/') }}",
           "logo": "{{ asset('images/logo.jpeg') }}",
@@ -41,7 +41,7 @@
           "foundingDate": "2025",
           "founders": [
             {
-              "@type": "Person",
+              "@@type": "Person",
               "name": "Raila Amolo Odinga"
             }
           ],
@@ -378,7 +378,7 @@
                                     Register
                                 </a>
                             @endif
-                        @endif
+                        @endauth
                     @endif
                 </div>
             </div>
