@@ -85,6 +85,7 @@
                     </div>
                     <!-- Desktop Navigation -->
                     <div class="hidden md:flex items-center space-x-4">
+                        <a href="#about" class="text-sm font-medium text-gray-700 hover:text-orange-600">About</a>
                         <a href="#leadership" class="text-sm font-medium text-gray-700 hover:text-orange-600">Leadership</a>
                         
                         <!-- Events Dropdown -->
@@ -268,6 +269,7 @@
             <!-- Mobile menu -->
             <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
                 <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-md">About</a>
                     <a href="#leadership" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-md">Leadership</a>
                     
                     <!-- Mobile Events Section -->
@@ -427,6 +429,105 @@
                 </div>
             </section>
 
+            <!-- About Us Section -->
+            <section id="about" class="py-20 bg-white relative overflow-hidden">
+                <!-- Large Watermark Logo Background -->
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <img src="{{ asset('images/logo.jpeg') }}" alt="" class="min-w-[150vw] min-h-[150vw] md:min-w-[1000px] md:min-h-[1000px] object-contain opacity-[0.06]">
+                </div>
+                
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <!-- Logo & Title -->
+                    <div class="text-center mb-16">
+                        <img src="{{ asset('images/logo.jpeg') }}" alt="ODM Comrades Chapter Logo" class="w-24 h-24 mx-auto mb-6 object-contain">
+                        <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-2">ODM Comrades Chapter</h2>
+                        <p class="text-sm text-gray-500 uppercase tracking-[0.2em]">Students' Wing of the Orange Democratic Movement</p>
+                    </div>
+
+                    <!-- Introduction -->
+                    <div class="mb-16">
+                        <div class="flex items-center mb-6">
+                            <div class="w-8 h-[2px] bg-orange-500 mr-4"></div>
+                            <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wider">Introduction</h3>
+                        </div>
+                        <p class="text-gray-600 leading-8 text-justify">
+                            The ODM Comrades Chapter is the students' wing of the Orange Democratic Movement (ODM) Party, bringing together students from tertiary institutions who subscribe to the party's values, ideology, and vision for a just and democratic society. The Chapter serves as an organized platform for ODM-aligned students to actively participate in party affairs, articulate and champion students' issues within party policy processes, and contribute to national political discourse from a youthful perspective.
+                        </p>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="border-t border-gray-200 my-12"></div>
+
+                    <!-- Objectives -->
+                    <div class="mb-16">
+                        <div class="flex items-center mb-8">
+                            <div class="w-8 h-[2px] bg-orange-500 mr-4"></div>
+                            <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wider">Our Objectives</h3>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="flex">
+                                <span class="text-orange-500 font-semibold mr-4 flex-shrink-0">01</span>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Student Mobilization & Party Registration</h4>
+                                    <p class="text-gray-600 text-sm leading-relaxed">To mobilize and register students from tertiary institutions as members of the ODM Party, with a target of at least 600,000 registered student members by 2027.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <span class="text-orange-500 font-semibold mr-4 flex-shrink-0">02</span>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Ideological Education & Political Consciousness</h4>
+                                    <p class="text-gray-600 text-sm leading-relaxed">To promote, popularize, and entrench ODM ideology, values, and policy positions among students and young people within learning institutions.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <span class="text-orange-500 font-semibold mr-4 flex-shrink-0">03</span>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Leadership Development & Cadre Building</h4>
+                                    <p class="text-gray-600 text-sm leading-relaxed">To nurture politically conscious, disciplined, and values-driven student leaders who will form the future leadership pipeline of the ODM Party.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <span class="text-orange-500 font-semibold mr-4 flex-shrink-0">04</span>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Advocacy for Students' Issues</h4>
+                                    <p class="text-gray-600 text-sm leading-relaxed">To identify, articulate, and champion issues affecting students and young people, and to ensure their integration into party policy and government action.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="border-t border-gray-200 my-12"></div>
+
+                    <!-- Vision & Mission - Simple Layout -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <div>
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-[2px] bg-orange-500 mr-4"></div>
+                                <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wider">Vision</h3>
+                            </div>
+                            <p class="text-gray-600 leading-7">
+                                A united and empowered student movement that nurtures transformative leaders and champions social democracy, justice, and inclusive development in Kenya.
+                            </p>
+                        </div>
+
+                        <div>
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-[2px] bg-orange-500 mr-4"></div>
+                                <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wider">Mission</h3>
+                            </div>
+                            <p class="text-gray-600 leading-7">
+                                To mobilize, educate, and empower students across universities, colleges, and TVETs by promoting ODM's values of democracy, equity, and good governance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Leadership Section -->
             <section id="leadership" class="py-24 bg-[#0a0f1c] relative overflow-hidden">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -434,17 +535,18 @@
                         Our Leadership
                     </h2>
                     <div class="flex flex-wrap justify-center gap-10">
-                        <!-- Leader 1: Raila Amolo Odinga -->
+                        <!-- Leader 1: CGH. Raila Amolo Odinga -->
                         <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
                             <img src="{{ asset('images/Raila Amolo Odinga- Party leader.jpeg') }}" alt="Party Leader" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
                             
                             <!-- Info Overlay -->
                             <div class="absolute bottom-0 w-full p-8 bg-black/60 backdrop-blur-md border-t border-white/10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-700 ease-out">
-                                <h3 class="text-white text-3xl font-bold mb-2 font-sans">Raila Amolo Odinga</h3>
+                                <h3 class="text-white text-3xl font-bold mb-2 font-sans">CGH. Raila Amolo Odinga </h3>
                                 <div class="flex items-center gap-2 mb-4">
                                     <div class="w-10 h-0.5 bg-orange-500"></div>
-                                    <p class="text-orange-500 font-bold uppercase tracking-widest text-xs">Party Leader</p>
+                                    <p class="text-orange-500 font-bold uppercase tracking-widest text-xs">Founder ODM Party -1ST Party Leader (Died on 15 October 2025
+</p>
                                 </div>
                                 <p class="text-gray-300 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
                                     "We stand firm in our resolve to build a democratic and inclusive nation."
@@ -452,7 +554,77 @@
                             </div>
                         </div>
 
-                         <!-- Leader 8: Patron -->
+                             <!-- Leader 3: Hon. Dr.Oburu Oginga -->
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
+                            <img src="{{ asset('images/oburu.jpeg') }}" alt="Current Party Leader - ODM" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
+                            
+                            <div class="absolute bottom-0 w-full p-8 bg-black/60 backdrop-blur-md border-t border-white/10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                                <h3 class="text-white text-3xl font-bold mb-2 font-sans">Hon. Dr.Oburu Oginga</h3>
+                                <div class="flex items-center gap-2 mb-4">
+                                    <div class="w-10 h-0.5 bg-orange-500"></div>
+                                    <p class="text-blue-500 font-bold uppercase tracking-widest text-xs">Current Party Leader - ODM</p>
+                                </div>
+                                <p class="text-gray-300 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                                    "Comradeship is the heartbeat of our movement and youth empowerment."
+                                </p>
+                            </div>
+                        </div>
+                     
+                           
+                        <!-- Leader 2: Hon. Oduor Ongwen -->
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
+                            <img src="{{ asset('images/Hon. Oduor Ongwen- Executive Director ODM party.jpeg') }}" alt="Executive Director" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
+                            
+                            <div class="absolute bottom-0 w-full p-8 bg-black/60 backdrop-blur-md border-t border-white/10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                                <h3 class="text-white text-3xl font-bold mb-2 font-sans">Hon. Oduor Ongwen</h3>
+                                <div class="flex items-center gap-2 mb-4">
+                                    <div class="w-10 h-0.5 bg-blue-500"></div>
+                                    <p class="text-orange-500 font-bold uppercase tracking-widest text-xs">Executive Director</p>
+                                </div>
+                                <p class="text-gray-300 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                                    "The party remains the engine of progressive change and strategic mobilization."
+                                </p>
+                            </div>
+                        </div>
+                        
+                              <!-- Leader 2: Hon.Gladys Wanga -->
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
+                            <img src="{{ asset('images/gladys.jpeg') }}" alt="National Chairperson -ODM" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
+                            
+                            <div class="absolute bottom-0 w-full p-8 bg-black/60 backdrop-blur-md border-t border-white/10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                                <h3 class="text-white text-3xl font-bold mb-2 font-sans">Hon.Gladys Wanga</h3>
+                                <div class="flex items-center gap-2 mb-4">
+                                    <div class="w-10 h-0.5 bg-blue-500"></div>
+                                    <p class="text-orange-500 font-bold uppercase tracking-widest text-xs">National Chairperson - ODM</p>
+                                </div>
+                                <p class="text-gray-300 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                                    "The party remains the engine of progressive change and strategic mobilization."
+                                </p>
+                            </div>
+                        </div>
+                     
+                      
+                        
+                          <!-- Leader 2: Hon . Edwin sifuna -->
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
+                            <img src="{{ asset('images/sifuna.jpeg') }}" alt="Secretary General - ODM" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
+                            
+                            <div class="absolute bottom-0 w-full p-8 bg-black/60 backdrop-blur-md border-t border-white/10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                                <h3 class="text-white text-3xl font-bold mb-2 font-sans">Hon . Edwin sifuna</h3>
+                                <div class="flex items-center gap-2 mb-4">
+                                    <div class="w-10 h-0.5 bg-blue-500"></div>
+                                    <p class="text-orange-500 font-bold uppercase tracking-widest text-xs">Secretary General - ODM</p>
+                                </div>
+                                <p class="text-gray-300 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                                    "The party remains the engine of progressive change and strategic mobilization."
+                                </p>
+                            </div>
+                        </div>
+                           <!-- Leader 8: Patron -->
                         <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/10 transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(100,116,139,0.4)] cursor-pointer">
                             <img src="{{ asset('images/Nasra.jpeg') }}" alt="IT Team" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
@@ -469,17 +641,33 @@
                             </div>
                         </div>
                         
-
-                        <!-- Leader 3: Hon. Gerald Owuor -->
+                           <!-- Leader 3 Mr. Gerald Owuor -->
                         <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
                             <img src="{{ asset('images/ODM_Comrades_Chapter_National_Chairperson_Gerald_Ogalo.jpeg') }}" alt="National Chairperson" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
                             
                             <div class="absolute bottom-0 w-full p-8 bg-black/60 backdrop-blur-md border-t border-white/10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-700 ease-out">
-                                <h3 class="text-white text-3xl font-bold mb-2 font-sans">Hon. Gerald Owuor</h3>
+                                <h3 class="text-white text-3xl font-bold mb-2 font-sans">Mr. Gerald Owuor</h3>
                                 <div class="flex items-center gap-2 mb-4">
                                     <div class="w-10 h-0.5 bg-orange-500"></div>
-                                    <p class="text-orange-500 font-bold uppercase tracking-widest text-xs">National Chairperson</p>
+                                    <p class="text-orange-500 font-bold uppercase tracking-widest text-xs">National Chairperson -ODM Comrades Chapter</p>
+                                </div>
+                                <p class="text-gray-300 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                                    "Comradeship is the heartbeat of our movement and youth empowerment."
+                                </p>
+                            </div>
+                        </div>
+                        
+                           <!-- Leader 3: Grace Nafula Wekesa -->
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
+                            <img src="{{ asset('images/grace.jpeg') }}" alt="National Vice Chairperson OCC" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
+                            
+                            <div class="absolute bottom-0 w-full p-8 bg-black/60 backdrop-blur-md border-t border-white/10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                                <h3 class="text-white text-3xl font-bold mb-2 font-sans">Grace Nafula Wekesa</h3>
+                                <div class="flex items-center gap-2 mb-4">
+                                    <div class="w-10 h-0.5 bg-orange-500"></div>
+                                    <p class="text-blue-500 font-bold uppercase tracking-widest text-xs">National Vice Chairperson OCC</p>
                                 </div>
                                 <p class="text-gray-300 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
                                     "Comradeship is the heartbeat of our movement and youth empowerment."
@@ -487,40 +675,9 @@
                             </div>
                         </div>
 
-                        <!-- Leader : President ODM Youth League -->
-                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/10 transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(100,116,139,0.4)] cursor-pointer">
-                            <img src="{{ asset('images/John.jpeg') }}" alt="IT Team" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
-                            
-                            <div class="absolute bottom-0 w-full p-6 backdrop-blur-md bg-black/40 border-t border-white/10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-out">
-                                <h3 class="text-white text-3xl font-bold mb-1 font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Hon. John Mark Brown Ketora</h3>
-                                <div class="flex items-center gap-2 mb-4">
-                                    <div class="w-8 h-0.5 bg-blue-400 shadow-[0_0_10px_skyblue]"></div>
-                                    <p class="text-blue-300 font-bold uppercase tracking-[0.2em] text-xs text-shadow-sm">President ODM Youth League</p>
-                                </div>
-                                <p class="text-gray-200 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 translate-y-2 group-hover:translate-y-0 transform">
-                                    "Leading an enthusiastic and vibrant youth movement."
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Leader 2: Hon. Oduor Ongwen -->
-                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
-                            <img src="{{ asset('images/Hon. Oduor Ongwen- Executive Director ODM party.jpeg') }}" alt="Executive Director" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
-                            
-                            <div class="absolute bottom-0 w-full p-8 bg-black/60 backdrop-blur-md border-t border-white/10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-700 ease-out">
-                                <h3 class="text-white text-3xl font-bold mb-2 font-sans">Hon. Oduor Ongwen</h3>
-                                <div class="flex items-center gap-2 mb-4">
-                                    <div class="w-10 h-0.5 bg-blue-500"></div>
-                                    <p class="text-blue-500 font-bold uppercase tracking-widest text-xs">Executive Director</p>
-                                </div>
-                                <p class="text-gray-300 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
-                                    "The party remains the engine of progressive change and strategic mobilization."
-                                </p>
-                            </div>
-                        </div>
-
+                        
+                        
+                        
 
                         <!-- Leader 4: Hannington Oguk -->
                         <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
@@ -555,17 +712,34 @@
                                 </p>
                             </div>
                         </div>
+                        
+                         <!-- Leader 6: Biko Shanton Omondi -->
+                        <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
+                            <img src="{{ asset('images/biko.jpeg') }}" alt="Deputy -Communications director. " class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
+                            
+                            <div class="absolute bottom-0 w-full p-8 bg-black/60 backdrop-blur-md border-t border-white/10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                                <h3 class="text-white text-3xl font-bold mb-2 font-sans">Biko Shanton Omondi</h3>
+                                <div class="flex items-center gap-2 mb-4">
+                                    <div class="w-10 h-0.5 bg-orange-500"></div>
+                                    <p class="text-orange-500 font-bold uppercase tracking-widest text-xs">Deputy -Communications director. </p>
+                                </div>
+                                <p class="text-gray-300 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                                    "We are committed to providing timely, accurate, and transparent information."
+                                </p>
+                            </div>
+                        </div>
 
-                        <!-- Leader 6: Tony (IT Team) -->
+                        <!-- Leader 6:ICT Director -ODM Comrades Chapter -->
                         <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/10 transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(100,116,139,0.4)] cursor-pointer">
-                            <img src="{{ asset('images/Tony.jpeg') }}" alt="IT Team" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <img src="{{ asset('images/Tony.jpeg') }}" alt="ICT Director -ODM Comrades Chapter" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
                             
                             <div class="absolute bottom-0 w-full p-6 backdrop-blur-md bg-black/40 border-t border-white/10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-out">
                                 <h3 class="text-white text-3xl font-bold mb-1 font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Tony W. Inganga</h3>
                                 <div class="flex items-center gap-2 mb-4">
                                     <div class="w-8 h-0.5 bg-blue-400 shadow-[0_0_10px_skyblue]"></div>
-                                    <p class="text-blue-300 font-bold uppercase tracking-[0.2em] text-xs text-shadow-sm">IT Specialist</p>
+                                    <p class="text-blue-300 font-bold uppercase tracking-[0.2em] text-xs text-shadow-sm">ICT Director -ODM Comrades Chapter</p>
                                 </div>
                                 <p class="text-gray-200 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 translate-y-2 group-hover:translate-y-0 transform">
                                     "Service to the party and the people is our highest calling in every capacity."
@@ -573,16 +747,16 @@
                             </div>
                         </div>
 
-                        <!-- Leader 7: Evans (IT Team) -->
+                        <!-- Leader 7: Deputy ICT Director -ODM Comrades Chapter -->
                         <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/10 transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(100,116,139,0.4)] cursor-pointer">
-                            <img src="{{ asset('images/evans5.jpg') }}" alt="IT Team" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <img src="{{ asset('images/evans5.jpg') }}" alt="Deputy ICT Director -ODM Comrades Chapter" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
                             
                             <div class="absolute bottom-0 w-full p-6 backdrop-blur-md bg-black/40 border-t border-white/10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-out">
                                 <h3 class="text-white text-3xl font-bold mb-1 font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Evans A. Osumba</h3>
                                 <div class="flex items-center gap-2 mb-4">
                                     <div class="w-8 h-0.5 bg-blue-400 shadow-[0_0_10px_skyblue]"></div>
-                                    <p class="text-blue-300 font-bold uppercase tracking-[0.2em] text-xs text-shadow-sm">IT Specialist</p>
+                                    <p class="text-orange-300 font-bold uppercase tracking-[0.2em] text-xs text-shadow-sm">Deputy ICT Director -ODM Comrades Chapter</p>
                                 </div>
                                 <p class="text-gray-200 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 translate-y-2 group-hover:translate-y-0 transform">
                                     "Unity and discipline within the party are the pillars of our strength."
@@ -714,7 +888,7 @@
                                     Your browser does not support the video tag.
                                 </video>
                                 <div class="absolute top-4 right-4 bg-orange-600 text-white px-3 py-2 rounded-full text-sm font-medium pointer-events-none">
-                                    📹 Video
+                                    ðŸ“¹ Video
                                 </div>
                                 <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                                     <div class="p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
@@ -853,7 +1027,7 @@
                                     Your browser does not support the video tag.
                                 </video>
                                 <div class="absolute top-4 right-4 bg-orange-600 text-white px-3 py-2 rounded-full text-sm font-medium pointer-events-none">
-                                    📹 Video
+                                    ðŸ“¹ Video
                                 </div>
                                 <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                                     <div class="p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
