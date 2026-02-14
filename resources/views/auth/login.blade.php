@@ -1,139 +1,327 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Log In - ODM Comrades Chapter</title>
-    <!-- Fonts -->
+    <title>Member Login | ODM Comrades Chapter</title>
+    
+    <!-- Premium Font: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <!-- Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                    },
-                    colors: {
-                        orange: {
-                            500: '#f97316',
-                            600: '#ea580c',
-                            target: '#fb923c',
-                        },
-                        blue: {
-                            900: '#1e3a8a',
-                            950: '#172554',
-                        }
-                    }
-                }
+
+    <style type="text/css">
+        :root {
+            --odm-blue: #1e3a8a;
+            --odm-orange: #f97316;
+            --odm-white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: var(--odm-white);
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .page-container {
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        /* Branding Section - ODM Blue */
+        .branding-section {
+            flex: 1;
+            background: var(--odm-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+            padding-right: 5%;
+        }
+
+        /* Form Section - Clean White */
+        .form-section {
+            flex: 1;
+            background: var(--odm-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-left: -10%;
+            z-index: 5;
+        }
+
+        .branding-content {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .logo-img {
+            height: clamp(140px, 25vh, 240px);
+            width: auto;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+        }
+
+        .branding-title {
+            color: var(--odm-white);
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .branding-title span {
+            color: var(--odm-orange);
+        }
+
+        .branding-subtitle {
+            color: var(--odm-white);
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            opacity: 0.9;
+        }
+
+        /* Login Form Styling */
+        .login-container {
+            width: 100%;
+            max-width: 420px;
+            padding: 2rem;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .form-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .form-header h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--odm-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-header p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .label-text {
+            display: block;
+            color: var(--odm-blue);
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            margin-left: 0.25rem;
+        }
+
+        .input-relative {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-field {
+            width: 100%;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 0.875rem 1rem 0.875rem 3rem;
+            color: var(--odm-blue);
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            outline: none;
+        }
+
+        .input-field:focus {
+            border-color: var(--odm-blue);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.05);
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 1rem;
+            color: #94a3b8;
+            transition: color 0.2s ease;
+        }
+
+        .input-field:focus + .input-icon {
+            color: var(--odm-blue);
+        }
+
+        .button-primary {
+            width: 100%;
+            background: var(--odm-orange);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+            margin-top: 1rem;
+        }
+
+        .button-primary:hover {
+            background: #ea580c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(249, 115, 22, 0.4);
+        }
+
+        .button-primary:active {
+            transform: translateY(0);
+        }
+
+        .form-footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: #64748b;
+            font-size: 1rem;
+        }
+
+        .form-footer a {
+            color: var(--odm-orange);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Fix - No Logo Clipping */
+        @media (max-width: 1024px) {
+            .page-container {
+                flex-direction: column;
             }
-        }
-    </script>
-    <style type="text/tailwindcss">
-        .form-card {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-        .form-input {
-            @apply w-full rounded-xl border border-gray-300 py-3 px-4 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all outline-none bg-gray-50/50;
+
+            .branding-section {
+                width: 100%;
+                height: 45vh;
+                clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+                padding-right: 0;
+                padding-bottom: 2rem;
+                flex: none;
+            }
+
+            .form-section {
+                width: 100%;
+                margin-left: 0;
+                margin-top: -5vh;
+                padding: 3rem 1.5rem;
+                flex: none;
+            }
+
+            .branding-title {
+                font-size: 2.5rem;
+            }
+
+            .logo-img {
+                height: 160px;
+            }
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-[#FF8C00] to-[#F97316] min-h-screen font-sans selection:bg-blue-900 selection:text-white overflow-x-hidden">
-    <!-- Subtle Pattern Overlay -->
-    <div class="fixed top-0 left-0 w-full h-full pointer-events-none opacity-10 -z-10" 
-         style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
-
-    <div class="min-h-screen flex flex-col items-center justify-center p-4">
-        <!-- Brand Header -->
-        <div class="w-full max-w-md mb-8 flex flex-col items-center">
-            <a href="{{ url('/') }}" class="inline-flex items-center gap-3 group transition-transform hover:scale-105">
-                <div class="p-2 bg-white rounded-2xl shadow-xl">
-                    <img src="{{ asset('images/odmlogo.png') }}" alt="ODM Logo" class="h-10 w-auto">
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-xl font-bold text-blue-950 tracking-tight">ODM Comrades</span>
-                    <span class="text-xs font-bold text-white tracking-wider uppercase">Chapter</span>
-                </div>
-            </a>
-        </div>
-
-        <!-- Login Card -->
-        <div class="w-full max-w-md form-card rounded-2xl overflow-hidden anim-fade-up">
-            <div class="p-8 sm:p-12">
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-3">Welcome Back</h2>
-                    <p class="text-gray-500 font-medium">Access your ODM Comrades account</p>
-                </div>
-
-                @if ($errors->any())
-                    <div class="mb-8 p-4 bg-red-50 border-l-4 border-red-500 rounded-r-xl">
-                        <div class="flex items-start gap-3">
-                            <i data-lucide="alert-circle" class="text-red-500 w-5 h-5 shrink-0 mt-0.5"></i>
-                            <div>
-                                <h4 class="text-sm font-bold text-red-800 mb-1">Login Failed</h4>
-                                <ul class="text-sm text-red-700">
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                @endif
-
-                <form action="{{ route('login') }}" method="POST" class="space-y-6">
-                    @csrf
-                    
-                    <div class="space-y-5">
-                        <div class="relative">
-                            <label for="phone_number" class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2 ml-1">
-                                <i data-lucide="phone" class="w-4 h-4 text-orange-600"></i>
-                                Phone Number
-                            </label>
-                            <input id="phone_number" name="phone_number" type="text" required 
-                                   class="form-input" 
-                                   placeholder="Enter your phone number">
-                        </div>
-
-                        <div class="relative">
-                            <label for="national_id" class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2 ml-1">
-                                <i data-lucide="id-card" class="w-4 h-4 text-orange-600"></i>
-                                National ID
-                            </label>
-                            <input id="national_id" name="national_id" type="text" required 
-                                   class="form-input" 
-                                   placeholder="Enter your National ID">
-                        </div>
-                    </div>
-
-                    <div class="pt-2">
-                        <button type="submit" 
-                                class="w-full py-4 px-6 bg-blue-950 rounded-2xl text-white font-bold text-lg shadow-xl shadow-blue-900/20 hover:bg-blue-900 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300">
-                            Sign In
-                        </button>
-                    </div>
-
-                    <div class="text-center mt-8">
-                        <p class="text-gray-500 font-medium">
-                            Don't have an account? 
-                            <a href="{{ route('register') }}" class="text-orange-600 hover:text-orange-700 font-bold underline decoration-orange-300 underline-offset-4 decoration-2">
-                                Register here
-                            </a>
-                        </p>
-                    </div>
-                </form>
+<body>
+    <div class="page-container">
+        <!-- Branding Side -->
+        <div class="branding-section">
+            <div class="branding-content">
+                <img src="{{ asset('images/logo.jpeg') }}" alt="ODM Comrades Chapter Logo" class="logo-img">
+                <h1 class="branding-title">ODM <span>COMRADES</span></h1>
+                <p class="branding-subtitle">Chapter</p>
             </div>
         </div>
 
-        <!-- Footer -->
-        <div class="mt-12 text-center text-gray-500 text-sm">
-            <p>&copy; {{ date('Y') }} ODM Comrades Chapter. All rights reserved.</p>
+        <!-- Form Side -->
+        <div class="form-section">
+            <div class="login-container">
+                <div class="form-header">
+                    <h2>Member Login</h2>
+                    <p>Enter your details to access your portal</p>
+                </div>
+
+                @if ($errors->any())
+                    <div class="mb-6 p-4 bg-red-50 border-l-4 border-red-500 rounded-md">
+                        <ul class="text-sm text-red-700">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                <form action="{{ route('login') }}" method="POST" class="space-y-5">
+                    @csrf
+                    
+                    <div class="input-group">
+                        <label for="phone_number" class="label-text">Phone Number</label>
+                        <div class="input-relative">
+                            <input id="phone_number" name="phone_number" type="text" required 
+                                   class="input-field" 
+                                   placeholder="e.g. 0712 345 678" autofocus>
+                            <i data-lucide="phone" class="input-icon w-5 h-5"></i>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="national_id" class="label-text">National ID Number</label>
+                        <div class="input-relative">
+                            <input id="national_id" name="national_id" type="text" required 
+                                   class="input-field" 
+                                   placeholder="Your ID Number">
+                            <i data-lucide="id-card" class="input-icon w-5 h-5"></i>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center">
+                        <input id="remember" name="remember" type="checkbox" 
+                               class="w-4 h-4 text-blue-800 border-gray-300 rounded focus:ring-blue-800">
+                        <label for="remember" class="ml-2 block text-sm text-gray-700 font-medium cursor-pointer">
+                            Keep me logged in
+                        </label>
+                    </div>
+
+                    <button type="submit" class="button-primary">
+                        Log In
+                    </button>
+                </form>
+
+                <div class="form-footer">
+                    Not a member yet? <a href="{{ route('register') }}">Apply for membership</a>
+                </div>
+
+                <div class="mt-12 pt-6 border-t border-gray-100 text-center">
+                    <p class="text-gray-400 text-xs font-semibold uppercase tracking-widest">
+                        &copy; {{ date('Y') }} ODM Comrades Chapter
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 
