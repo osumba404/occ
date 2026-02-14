@@ -70,206 +70,157 @@
     </head>
     <body class="bg-gray-50 text-[#1b1b18] min-h-screen flex flex-col font-sans antialiased">
         
-        <!-- Navigation Bar -->
-        <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between h-16">
-                    <div class="flex flex-1 items-center min-w-0">
-                        <!-- Logo / Brand Name -->
-                        <a href="{{ url('/') }}" class="text-lg sm:text-2xl font-bold text-orange-600 tracking-tight flex items-center gap-1.5 sm:gap-3">
-                            <img src="{{ asset('images/logo.jpeg') }}" alt="ODM Logo" class="h-8 w-8 sm:h-10 sm:w-10 object-contain flex-shrink-0">
-                            <span class="text-blue-900">ODM</span> 
-                            <span class="text-blue-900">Comrades</span>
-                            <span class="text-blue-900">Chapter</span>
-                        </a>
+        <!-- Top Status Bar (Exact Mirror of Reference) -->
+        <div class="bg-gradient-to-r from-[#1e3a8a] via-[#1e40af] to-[#ea580c] text-white py-3 px-4 relative z-[60]">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-center items-center gap-4 text-xs font-bold tracking-widest uppercase">
+                <div class="flex items-center gap-3">
+                    <svg class="w-4 h-4 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span id="live-clock-time" class="text-white drop-shadow-sm">SAT, 14 FEB 2026 • 17:00:28</span>
+                </div>
+                <div class="hidden md:block w-[1px] h-4 bg-white/20"></div>
+                <div class="flex items-center gap-3">
+                    <div class="px-3 py-1 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">
+                        <span class="text-white/90 text-[10px]">EAT (UTC+3)</span>
                     </div>
-                    <!-- Desktop Navigation -->
-                    <div class="hidden md:flex items-center space-x-4">
-                        <a href="#about" class="text-sm font-medium text-gray-700 hover:text-orange-600">About</a>
-                        <a href="#leadership" class="text-sm font-medium text-gray-700 hover:text-orange-600">Leadership</a>
-                        
-                        <!-- Events Dropdown -->
-                        <div class="relative group" id="events-dropdown-container">
-                            <button id="events-button" class="group inline-flex items-center text-sm font-medium text-gray-700 hover:text-orange-600 focus:outline-none">
-                                <span>Events</span>
-                                <svg class="ml-2 h-5 w-5 text-gray-400 group-hover:text-orange-600 transition-transform duration-200" id="events-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </button>
-
-                            <!-- Dropdown Menu -->
-                            <div id="events-menu" class="hidden absolute z-50 left-1/2 transform -translate-x-1/2 mt-3 w-80 max-w-[90vw] bg-white rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 overflow-hidden origin-top transition-all duration-200 ease-out opacity-0 scale-95 origin-top-left">
-                                <div class="p-4 bg-orange-50 border-b border-orange-100">
-                                    <h3 class="text-sm font-bold text-orange-800 uppercase tracking-wider">2026 Events Schedule</h3>
-                                </div>
-                                <div class="max-h-[60vh] overflow-y-auto py-2">
-                                    <!-- Event 1 -->
-                                    <button class="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-colors duration-150 event-item-btn" 
-                                            data-title="Coast Chapter (Mombasa)" 
-                                            data-date="February 17, 2026"
-                                            data-location="Mombasa, Kilifi, Kwale, Taita Taveta"
-                                            data-venue="Tononoka Hall Mombasa"
-                                            data-attendees="1000 students (From Mombasa, Kilifi, Kwale, Taita Taveta)"
-                                            data-theme="&quot;From Campus to Country: Reawakening ODM Ideology Among Students&quot;"
-                                            data-objectives="To register over 7000 students, launch Coast Region Comrades Chapter, champion voter registration, and offer political education.">
-                                        <div class="flex justify-between items-start">
-                                            <div>
-                                                <p class="text-sm font-bold text-blue-900">Coast Chapter</p>
-                                                <p class="text-xs text-gray-500 mt-0.5">Mombasa, Kilifi, Kwale, Taita Taveta</p>
-                                            </div>
-                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-orange-100 text-orange-800 whitespace-nowrap">
-                                                Feb 17
-                                            </span>
-                                        </div>
-                                    </button>
-                                    <!-- Event 2 -->
-                                    <button class="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-colors duration-150 event-item-btn"
-                                            data-title="Nakuru Chapter"
-                                            data-date="February 23, 2026"
-                                            data-venue="TBD"
-                                            data-theme="Regional Mobilization"
-                                            data-attendees="Students from Nakuru Region">
-                                        <div class="flex justify-between items-center">
-                                            <p class="text-sm font-bold text-gray-800">Nakuru Chapter</p>
-                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600 whitespace-nowrap">Feb 23</span>
-                                        </div>
-                                    </button>
-                                    <!-- Event 3 -->
-                                    <button class="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-colors duration-150 event-item-btn"
-                                            data-title="Narok Chapter"
-                                            data-date="February 24, 2026"
-                                            data-venue="TBD"
-                                            data-theme="Grassroots Activation"
-                                            data-attendees="Students from Narok Region">
-                                        <div class="flex justify-between items-center">
-                                            <p class="text-sm font-bold text-gray-800">Narok Chapter</p>
-                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600 whitespace-nowrap">Feb 24</span>
-                                        </div>
-                                    </button>
-                                    <!-- Event 4 -->
-                                    <button class="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-colors duration-150 event-item-btn"
-                                            data-title="Kisumu Chapter (Nyanza)"
-                                            data-date="March 4, 2026"
-                                            data-location="Homa Bay, Migori, Kisumu, Siaya"
-                                            data-venue="TBD"
-                                            data-theme="Strategy & Consolidation"
-                                            data-attendees="Students from Nyanza Region">
-                                        <div class="flex justify-between items-start">
-                                            <div>
-                                                <p class="text-sm font-bold text-gray-800">Kisumu Chapter</p>
-                                                <p class="text-xs text-gray-500 mt-0.5">Nyanza Region</p>
-                                            </div>
-                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600 whitespace-nowrap">Mar 4</span>
-                                        </div>
-                                    </button>
-                                    <!-- Event 5 -->
-                                    <button class="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-colors duration-150 event-item-btn"
-                                            data-title="Kakamega Chapter (Western)"
-                                            data-date="March 5, 2026"
-                                            data-venue="TBD"
-                                            data-theme="Western Region Activation"
-                                            data-attendees="Students from Western Region">
-                                        <div class="flex justify-between items-center">
-                                            <p class="text-sm font-bold text-gray-800">Kakamega Chapter</p>
-                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600 whitespace-nowrap">Mar 5</span>
-                                        </div>
-                                    </button>
-                                    <!-- Event 6 -->
-                                    <button class="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-colors duration-150 event-item-btn"
-                                            data-title="Eldoret Chapter (Rift Valley)"
-                                            data-date="April 9, 2026"
-                                            data-venue="TBD"
-                                            data-theme="Rift Valley Engagement"
-                                            data-attendees="Students from Rift Valley">
-                                        <div class="flex justify-between items-center">
-                                            <p class="text-sm font-bold text-gray-800">Eldoret Chapter</p>
-                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600 whitespace-nowrap">Apr 9</span>
-                                        </div>
-                                    </button>
-                                    <!-- Event 7 -->
-                                    <button class="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-colors duration-150 event-item-btn"
-                                            data-title="Eastern & N.E Chapter"
-                                            data-date="April 30, 2026"
-                                            data-venue="TBD"
-                                            data-theme="Regional Outreach"
-                                            data-attendees="Students from Eastern & NE Region">
-                                        <div class="flex justify-between items-center">
-                                            <p class="text-sm font-bold text-gray-800">Eastern & N.E Chapter</p>
-                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600 whitespace-nowrap">Apr 30</span>
-                                        </div>
-                                    </button>
-                                    <!-- Event 8 -->
-                                    <button class="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0 transition-colors duration-150 event-item-btn"
-                                            data-title="Central Kenya Chapter (Nyeri)"
-                                            data-date="May 13, 2026"
-                                            data-venue="TBD"
-                                            data-theme="Mountain Region Launch"
-                                            data-attendees="Students from Central Region">
-                                        <div class="flex justify-between items-center">
-                                            <p class="text-sm font-bold text-gray-800">Central Kenya (Nyeri)</p>
-                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600 whitespace-nowrap">May 13</span>
-                                        </div>
-                                    </button>
-                                    <!-- Event 9 -->
-                                    <button class="w-full text-left px-4 py-3 hover:bg-orange-50 border-b border-gray-100 last:border-0 bg-orange-50/50 transition-colors duration-150 event-item-btn"
-                                            data-title="ODM COMRADES CHAPTER MEGALAUNCH"
-                                            data-date="May 29, 2026"
-                                            data-venue="TBD"
-                                            data-theme="National Launch"
-                                            data-attendees="All Chapters">
-                                        <div class="flex justify-between items-center">
-                                            <p class="text-sm font-bold text-orange-900">MEGALAUNCH</p>
-                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-orange-200 text-orange-800 whitespace-nowrap">May 29</span>
-                                        </div>
-                                    </button>
-                                    <!-- Event 10 -->
-                                    <button class="w-full text-left px-4 py-3 hover:bg-gray-50 last:border-0 transition-colors duration-150 event-item-btn"
-                                            data-title="Kisii & Nyamira Chapter"
-                                            data-date="June 19, 2026"
-                                            data-venue="TBD"
-                                            data-theme="Regional Activation"
-                                            data-attendees="Students from Kisii & Nyamira">
-                                        <div class="flex justify-between items-center">
-                                            <p class="text-sm font-bold text-gray-800">Kisii & Nyamira</p>
-                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600 whitespace-nowrap">Jun 19</span>
-                                        </div>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <a href="#celebrations" class="text-sm font-medium text-gray-700 hover:text-orange-600">Celebrations</a>
-                        <a href="#campus" class="text-sm font-medium text-gray-700 hover:text-orange-600">Campus</a>
-                        <a href="#youth" class="text-sm font-medium text-gray-700 hover:text-orange-600">Youth</a>
-                        @if (Route::has('register'))
-                            @auth
-                                <a href="{{ url('/dashboard') }}" class="text-sm font-medium text-gray-700 hover:text-orange-600">Dashboard</a>
-                            @else
-                                <a href="{{ route('login') }}" class="text-sm font-medium text-gray-700 hover:text-orange-600">Log in</a>
-
-                                @if (Route::has('membership'))
-                                    <a href="{{ route('membership') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500" style="background-color: #fb923c;">
-                                        Register
-                                    </a>
-                                @endif
-                            @endauth
-                        @endif
+                    <div class="flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full border border-white/10">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                        </span>
+                        <span class="text-white text-[10px] leading-none tracking-[0.2em]">LIVE</span>
                     </div>
-                    <!-- Mobile menu button -->
-                    <div class="md:hidden flex items-center">
-                        <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500">
+                </div>
+            </div>
+        </div>
+
+        <!-- Branding Masthead (Reference Reconstruction) -->
+        <header class="bg-white py-12 border-b border-gray-100 relative z-50 shadow-sm">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10">
+                <!-- Left: Large Metal Textured ODM Logo -->
+                <div class="flex flex-col items-center md:items-start">
+                    <div class="relative group">
+                        <span class="text-6xl md:text-8xl font-black tracking-tighter italic leading-none" 
+                              style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 25%, #ffffff 50%, #fb923c 75%, #ea580c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(4px 4px 2px rgba(0,0,0,0.2));">
+                            ODM
+                        </span>
+                        <span class="block text-[10px] md:text-sm font-black text-blue-900/40 uppercase tracking-[0.2em] mt-2 ml-1">Kenya's Largest Political Party</span>
+                    </div>
+                </div>
+
+                <!-- Center: Orange Fruit Logo & Party Identity -->
+                <div class="flex items-center gap-6">
+                    <img src="{{ asset('images/logo.jpeg') }}" alt="ODM Official Logo" class="h-24 md:h-32 w-auto drop-shadow-2xl hover:scale-105 transition-transform duration-500">
+                    <div class="flex flex-col">
+                        <h2 class="text-2xl md:text-4xl font-serif italic font-bold text-[#b45309] leading-tight tracking-tight">
+                            ODM COMRADES
+                        </h2>
+                        <h2 class="text-2xl md:text-4xl font-serif italic font-bold text-[#b45309] leading-tight tracking-tight -mt-1">
+                            CHAPTER
+                        </h2>
+                        <p class="text-[9px] md:text-xs font-bold text-blue-900/60 uppercase tracking-[0.5em] mt-1 italic">
+                            Tuko Tayari
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right: Anniversary Badge -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <div class="flex flex-col items-end">
+                        <span class="text-4xl font-black text-blue-900 border-b-4 border-orange-500 pb-1 leading-none">20<span class="text-xs align-top mt-1 block">th</span></span>
+                        <span class="text-[9px] font-bold text-blue-900 uppercase tracking-widest mt-2">Anniversary</span>
+                        <span class="text-[8px] font-bold text-orange-500 uppercase tracking-[0.2em]">Celebration</span>
+                    </div>
+                    <div class="w-12 h-12 rounded-full border-2 border-orange-500/20 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-orange-500" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1a1 1 0 112 0v1a1 1 0 11-2 0zM13.536 14.95a1 1 0 010-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414 0zM6.464 14.95a1 1 0 01-1.414 0l-.707-.707a1 1 0 011.414-1.414l.707.707a1 1 0 010 1.414z"></path></svg>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Primary Navigation (Standard Height & Clickable) -->
+        <nav class="bg-[#FB923C] border-b border-[#F97316] sticky top-0 z-[70] shadow-lg transition-all duration-300" id="main-nav">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex justify-center md:justify-between h-14 md:h-16 items-center">
+                    <!-- Mobile Left (Empty for balance or drawer button) -->
+                    <div class="flex md:hidden flex-1">
+                        <button id="mobile-menu-button" class="p-2 rounded-md text-white hover:bg-white/10 transition-colors">
                             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                             </svg>
                         </button>
                     </div>
+
+                    <!-- Logo (Only visible when sticky/scrolled or hidden in this layout) -->
+                    <div class="hidden flex-1 items-center md:flex opacity-0 transition-opacity duration-300" id="sticky-logo">
+                         <a href="{{ url('/') }}" class="flex items-center gap-2">
+                            <img src="{{ asset('images/logo.jpeg') }}" class="h-8 w-8 rounded-full border border-white/20">
+                            <span class="font-bold text-white text-sm">ODM COMRADES</span>
+                         </a>
+                    </div>
+
+                    <!-- Desktop Links - Centered -->
+                    <div class="hidden md:flex items-center space-x-10">
+                        <a href="{{ url('/') }}" class="text-xs font-black uppercase tracking-widest text-white hover:text-orange-100 transition-colors py-2 border-b-2 border-transparent hover:border-white">Home</a>
+                        <a href="#about" class="text-xs font-black uppercase tracking-widest text-white hover:text-orange-100 transition-colors py-2 border-b-2 border-transparent hover:border-white">About</a>
+                        <a href="#leadership" class="text-xs font-black uppercase tracking-widest text-white hover:text-orange-100 transition-colors py-2 border-b-2 border-transparent hover:border-white">Leadership</a>
+                        
+                        <!-- Events Dropdown -->
+                        <div class="relative" id="events-dropdown-container">
+                            <button id="events-button" class="flex items-center text-xs font-black uppercase tracking-widest text-white hover:text-orange-100 py-2 border-b-2 border-transparent hover:border-white transition-all">
+                                <span>Events</span>
+                                <svg class="ml-1.5 h-3 w-3 text-white/70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                            </button>
+                            <!-- Dropdown Menu -->
+                            <div id="events-menu" class="hidden absolute z-[100] left-1/2 transform -translate-x-1/2 mt-0 w-72 bg-white shadow-2xl overflow-hidden transition-all duration-200 p-1.5">
+                                <div class="p-3 bg-gray-50 border-b border-gray-100 mb-1.5">
+                                    <h3 class="text-[9px] font-black text-blue-900 uppercase tracking-[0.2em]">2026 Schedule</h3>
+                                </div>
+                                <div class="space-y-0.5">
+                                    <button class="w-full text-left px-3 py-2 hover:bg-orange-50 transition-colors event-item-btn" data-title="Coast Chapter">
+                                        <div class="flex justify-between items-center"><span class="text-[10px] font-bold text-gray-800">Coast Chapter</span><span class="text-[9px] text-orange-500 font-bold">FEB 17</span></div>
+                                    </button>
+                                    <button class="w-full text-left px-3 py-2 hover:bg-orange-50 transition-colors event-item-btn" data-title="Nakuru Chapter">
+                                        <div class="flex justify-between items-center"><span class="text-[10px] font-bold text-gray-800">Nakuru Chapter</span><span class="text-[9px] text-orange-500 font-bold">FEB 23</span></div>
+                                    </button>
+                                    <button class="w-full text-left px-3 py-2 bg-orange-500 text-white transition-colors event-item-btn" data-title="MEGALAUNCH">
+                                        <div class="flex justify-between items-center"><span class="text-[10px] font-bold italic">MEGALAUNCH</span><span class="text-[9px] font-bold">MAY 29</span></div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#campus" class="text-[10px] font-black uppercase tracking-widest text-white hover:text-orange-100 transition-colors py-1 border-b-2 border-transparent hover:border-white">Campus</a>
+                        <a href="#youth" class="text-[10px] font-black uppercase tracking-widest text-white hover:text-orange-100 transition-colors py-1 border-b-2 border-transparent hover:border-white">Youth</a>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="hidden md:flex flex-1 justify-end items-center space-x-6">
+                        @if (Route::has('register'))
+                    <a href="{{ route('login') }}" class="text-[9px] font-black uppercase tracking-[0.2em] text-white/80 hover:text-white transition-colors">Login</a>
+                    @if (Route::has('membership'))
+                        <a href="{{ route('membership') }}" class="px-4 py-2 bg-blue-900 text-white text-[9px] font-black uppercase tracking-[0.2em] hover:bg-blue-800 transition-all shadow-sm border border-white/10">Join Us</a>
+                    @endif
+                        @endif
+                    </div>
+
+                    <!-- Mobile Center (Visible on Mobile) -->
+                    <div class="flex md:hidden flex-[2] justify-center items-center">
+                    <span class="font-black text-white tracking-tighter text-lg uppercase">ODM Comrades</span>
+                    </div>
+
+                    <!-- Mobile Right (Empty for balance) -->
+                    <div class="flex md:hidden flex-1 justify-end">
+                        <a href="{{ route('membership') }}" class="p-2 text-white hover:bg-white/10 rounded-md transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"></path></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
             
             <!-- Mobile Navigation Overlay & Drawer (Brand Correct Refinement) -->
-            <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] hidden transition-opacity duration-400 opacity-0"></div>
+            <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[90] hidden transition-opacity duration-400 opacity-0"></div>
             
-            <div id="mobile-menu-drawer" class="fixed top-0 left-0 h-full w-[85%] max-w-sm bg-blue-950 z-[70] transform -translate-x-full transition-transform duration-400 ease-out flex flex-col shadow-2xl overflow-hidden">
+            <div id="mobile-menu-drawer" class="fixed top-0 left-0 h-full w-[85%] max-w-sm bg-blue-950 z-[100] transform -translate-x-full transition-transform duration-400 ease-out flex flex-col shadow-2xl overflow-hidden">
                 <!-- Drawer Header: Centered Identity -->
                 <div class="p-8 flex flex-col items-center border-b border-white/5 relative bg-white/5">
                     <button id="mobile-menu-close" class="absolute top-4 right-4 p-2 text-white/50 hover:text-white transition-colors">
@@ -1153,69 +1104,8 @@
         <!-- JavaScript for Animations -->
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                // Mobile Menu Improved Toggle Logic
-                const mobileMenuButton = document.getElementById('mobile-menu-button');
-                const mobileMenuClose = document.getElementById('mobile-menu-close');
-                const mobileOverlay = document.getElementById('mobile-menu-overlay');
-                const mobileDrawer = document.getElementById('mobile-menu-drawer');
-
-                function openMobileMenu() {
-                    if (!mobileOverlay || !mobileDrawer) return;
-                    mobileOverlay.classList.remove('hidden');
-                    setTimeout(() => {
-                        mobileOverlay.classList.remove('opacity-0');
-                        mobileOverlay.classList.add('opacity-100');
-                        mobileDrawer.classList.remove('-translate-x-full');
-                        mobileDrawer.classList.add('translate-x-0');
-                    }, 5);
-                }
-
-                function closeMobileMenu() {
-                    if (!mobileOverlay || !mobileDrawer) return;
-                    mobileOverlay.classList.remove('opacity-100');
-                    mobileOverlay.classList.add('opacity-0');
-                    mobileDrawer.classList.remove('translate-x-0');
-                    mobileDrawer.classList.add('-translate-x-full');
-                    setTimeout(() => {
-                        mobileOverlay.classList.add('hidden');
-                    }, 400);
-                }
-
-                if (mobileMenuButton) mobileMenuButton.addEventListener('click', openMobileMenu);
-                if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu);
-                if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
-
-                // Close drawer on link clicks
-                document.querySelectorAll('#mobile-menu-drawer a').forEach(link => {
-                    link.addEventListener('click', closeMobileMenu);
-                });
                 
-                // Slideshow functionality - Gentle fade transitions
-                const slides = document.querySelectorAll('.slide');
-                let currentSlide = 0;
-                
-                function showSlide(index) {
-                    slides.forEach((slide, i) => {
-                        if (i === index) {
-                            // Current slide - visible
-                            slide.style.opacity = '1';
-                        } else {
-                            // Hidden slides
-                            slide.style.opacity = '0';
-                        }
-                    });
-                }
-                
-                function nextSlide() {
-                    currentSlide = (currentSlide + 1) % slides.length;
-                    showSlide(currentSlide);
-                }
-                
-                // Initialize first slide
-                showSlide(0);
-                
-                // Change slide every 6 seconds (slower for comfort)
-                setInterval(nextSlide, 6000);
+                // Slideshow logic removed (No items found)
                 
                 // Gallery Filter Functionality
                 const filterBtns = document.querySelectorAll('.filter-btn');
@@ -1341,6 +1231,99 @@
                         }
                     });
                 });
+
+                // Real-time Clock Implementation
+                function updateClock() {
+                    const clockElement = document.getElementById('live-clock-time');
+                    if (!clockElement) return;
+                    
+                    const now = new Date();
+                    const options = { 
+                        weekday: 'short', 
+                        day: '2-digit', 
+                        month: 'short', 
+                        year: 'numeric',
+                        hour: '2-digit', 
+                        minute: '2-digit', 
+                        second: '2-digit',
+                        hour12: false,
+                        timeZone: 'Africa/Nairobi'
+                    };
+                    
+                    // Format: SAT, 14 FEB 2026 • 17:00:28
+                    const formatter = new Intl.DateTimeFormat('en-GB', options);
+                    const parts = formatter.formatToParts(now);
+                    
+                    const getPart = (type) => parts.find(p => p.type === type)?.value || '';
+                    
+                    const formattedDate = `${getPart('weekday').toUpperCase()}, ${getPart('day')} ${getPart('month').toUpperCase()} ${getPart('year')} • ${getPart('hour')}:${getPart('minute')}:${getPart('second')}`;
+                    
+                    clockElement.textContent = formattedDate;
+                }
+                setInterval(updateClock, 1000);
+                updateClock();
+
+                // Consolidated Navigation & Dropdown Logic
+                const eventsButton = document.getElementById('events-button');
+                const eventsDropdown = document.getElementById('events-menu');
+                
+                if (eventsButton && eventsDropdown) {
+                    console.log("Navigation Initialized: Events Button Found");
+                    eventsButton.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        eventsDropdown.classList.toggle('hidden');
+                    });
+                    
+                    document.addEventListener('click', (e) => {
+                        if (!eventsButton.contains(e.target) && !eventsDropdown.contains(e.target)) {
+                            eventsDropdown.classList.add('hidden');
+                        }
+                    });
+                }
+
+                // Mobile Menu Toggle logic
+                const mobileBtn = document.getElementById('mobile-menu-button');
+                const mobileDrawer = document.getElementById('mobile-menu-drawer');
+                const mobileOverlay = document.getElementById('mobile-menu-overlay');
+                const mobileClose = document.getElementById('mobile-menu-close');
+
+                if (mobileBtn && mobileDrawer && mobileOverlay) {
+                    mobileBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        mobileDrawer.classList.remove('-translate-x-full');
+                        mobileOverlay.classList.remove('hidden');
+                        mobileOverlay.classList.add('opacity-100');
+                        document.body.style.overflow = 'hidden';
+                    });
+
+                    const closeMobileMenu = () => {
+                        mobileDrawer.classList.add('-translate-x-full');
+                        mobileOverlay.classList.remove('opacity-100');
+                        setTimeout(() => {
+                            mobileOverlay.classList.add('hidden');
+                            document.body.style.overflow = '';
+                        }, 300);
+                    };
+
+                    if (mobileClose) mobileClose.addEventListener('click', closeMobileMenu);
+                    mobileOverlay.addEventListener('click', closeMobileMenu);
+                    mobileDrawer.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
+                }
+
+                // Sticky Header Effects - Threshold adjusted for compact masthead
+                const stickyLogo = document.getElementById('sticky-logo');
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 150) {
+                        stickyLogo?.classList.remove('opacity-0');
+                        stickyLogo?.classList.add('opacity-100');
+                    } else {
+                        stickyLogo?.classList.remove('opacity-100');
+                        stickyLogo?.classList.add('opacity-0');
+                    }
+                });
+
             });
         </script>
         

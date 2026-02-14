@@ -218,28 +218,27 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Responsive Fix - No Logo Clipping */
+        /* Responsive Fix */
         @media (max-width: 1024px) {
             .page-container {
-                flex-direction: column !important;
-                display: flex !important;
+                flex-direction: column;
             }
 
             .branding-section {
-                width: 100% !important;
-                height: 35vh !important;
-                clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%) !important;
-                padding-right: 0 !important;
+                width: 100%;
+                height: 35vh;
+                clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+                padding-right: 0;
                 padding-bottom: 2rem;
-                flex: none !important;
+                flex: none;
             }
 
             .form-section {
-                width: 100% !important;
-                margin-left: 0 !important;
-                margin-top: -5vh !important;
-                padding: 2rem 1rem !important;
-                flex: none !important;
+                width: 100%;
+                margin-left: 0;
+                margin-top: -5vh;
+                padding: 2rem 1rem;
+                flex: none;
             }
 
             .branding-title {
