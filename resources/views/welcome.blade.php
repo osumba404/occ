@@ -151,7 +151,7 @@
                     </div>
 
                     <!-- Navigation Branding (Unified) -->
-                    <div class="flex flex-1 items-center opacity-0 transition-opacity duration-300" id="sticky-logo">
+                    <div class="flex flex-[2] md:flex-1 items-center md:opacity-0 transition-opacity duration-300" id="sticky-logo">
                          <a href="{{ url('/') }}" class="flex items-center gap-1.5 md:gap-2">
                             <img src="{{ asset('images/logo.jpeg') }}" class="h-7 w-7 md:h-8 md:w-8 rounded-full border border-white/20">
                             <span class="font-black text-white text-[10px] md:text-sm tracking-tighter md:tracking-normal uppercase">ODM Comrades Chapter</span>
@@ -203,10 +203,6 @@
                         @endif
                     </div>
 
-                    <!-- Mobile Center (Visible on Mobile) -->
-                    <div class="flex md:hidden flex-[2] justify-center items-center">
-                        <span class="font-black text-white tracking-tighter text-sm md:text-lg uppercase">ODM Comrades Chapter</span>
-                    </div>
 
                     <!-- Mobile Right (Empty for balance) -->
                     <div class="flex md:hidden flex-1 justify-end">
@@ -1339,15 +1335,21 @@
                     mobileDrawer.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
                 }
 
-                // Sticky Header Effects - Threshold adjusted for compact masthead
+                // Sticky Header Effects - Only for Desktop
                 const stickyLogo = document.getElementById('sticky-logo');
                 window.addEventListener('scroll', () => {
-                    if (window.scrollY > 150) {
-                        stickyLogo?.classList.remove('opacity-0');
-                        stickyLogo?.classList.add('opacity-100');
+                    if (window.innerWidth > 768) { 
+                        if (window.scrollY > 150) {
+                            stickyLogo?.classList.remove('md:opacity-0');
+                            stickyLogo?.classList.add('opacity-100');
+                        } else {
+                            stickyLogo?.classList.remove('opacity-100');
+                            stickyLogo?.classList.add('md:opacity-0');
+                        }
                     } else {
-                        stickyLogo?.classList.remove('opacity-100');
-                        stickyLogo?.classList.add('opacity-0');
+                        // Ensure it's always visible on mobile
+                        stickyLogo?.classList.remove('md:opacity-0');
+                        stickyLogo?.classList.add('opacity-100');
                     }
                 });
 
