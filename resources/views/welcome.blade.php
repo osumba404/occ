@@ -150,11 +150,11 @@
                         </button>
                     </div>
 
-                    <!-- Logo (Only visible when sticky/scrolled or hidden in this layout) -->
-                    <div class="hidden flex-1 items-center md:flex opacity-0 transition-opacity duration-300" id="sticky-logo">
-                         <a href="{{ url('/') }}" class="flex items-center gap-2">
-                            <img src="{{ asset('images/logo.jpeg') }}" class="h-8 w-8 rounded-full border border-white/20">
-                            <span class="font-bold text-white text-sm">ODM COMRADES</span>
+                    <!-- Navigation Branding (Unified) -->
+                    <div class="flex flex-1 items-center opacity-0 transition-opacity duration-300" id="sticky-logo">
+                         <a href="{{ url('/') }}" class="flex items-center gap-1.5 md:gap-2">
+                            <img src="{{ asset('images/logo.jpeg') }}" class="h-7 w-7 md:h-8 md:w-8 rounded-full border border-white/20">
+                            <span class="font-black text-white text-[10px] md:text-sm tracking-tighter md:tracking-normal uppercase">ODM Comrades Chapter</span>
                          </a>
                     </div>
 
@@ -205,7 +205,7 @@
 
                     <!-- Mobile Center (Visible on Mobile) -->
                     <div class="flex md:hidden flex-[2] justify-center items-center">
-                    <span class="font-black text-white tracking-tighter text-lg uppercase">ODM Comrades</span>
+                        <span class="font-black text-white tracking-tighter text-sm md:text-lg uppercase">ODM Comrades Chapter</span>
                     </div>
 
                     <!-- Mobile Right (Empty for balance) -->
@@ -231,7 +231,7 @@
                     
                     <img src="{{ asset('images/logo.jpeg') }}" alt="ODM Logo" class="h-24 w-auto mb-4 rounded-full border-4 border-white/10 shadow-xl">
                     <div class="text-center">
-                        <span class="block text-xl font-black tracking-tighter text-white leading-tight">ODM COMRADES</span>
+                        <span class="block text-xl font-black tracking-tighter text-white leading-tight">ODM COMRADES CHAPTER</span>
                         <span class="block text-xs font-bold text-orange-500 uppercase tracking-widest mt-1">Movement Chapter</span>
                     </div>
                 </div>
@@ -287,7 +287,7 @@
                 <!-- Footer -->
                 <div class="p-8 border-t border-white/5 text-center mt-auto bg-black/20">
                     <p class="text-[10px] text-white/20 uppercase font-bold tracking-[0.4em]">
-                        &copy; {{ date('Y') }} ODM COMRADES
+                        &copy; {{ date('Y') }} ODM COMRADES CHAPTER
                     </p>
                 </div>
             </div>
@@ -447,12 +447,23 @@
                 </div>
             </section>
 
-            <!-- Leadership Section -->
-            <section id="leadership" class="py-24 bg-[#0a0f1c] relative overflow-hidden">
+            <!-- Supreme Party Leadership Section -->
+            <section id="leadership-supreme" class="py-24 bg-[#0a0f1c] relative overflow-hidden border-b border-white/5">
+                <!-- Background Decorative Elements -->
+                <div class="absolute top-0 left-0 w-full h-full">
+                    <div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[120px]"></div>
+                    <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-orange-900/5 rounded-full blur-[120px]"></div>
+                </div>
+
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <h2 class="text-4xl md:text-5xl font-bold text-center mb-20 text-white tracking-tight">
-                        Our Leadership
-                    </h2>
+                    <div class="text-center mb-16">
+                        <span class="text-orange-500 font-black text-xs uppercase tracking-[0.4em] mb-4 block">National Identity</span>
+                        <h2 class="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-none">
+                            Supreme Party <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Leadership</span>
+                        </h2>
+                        <div class="w-24 h-1.5 bg-orange-500 mx-auto mt-8 rounded-full"></div>
+                    </div>
+
                     <div class="flex flex-wrap justify-center gap-10">
                         <!-- Leader 1: CGH. Raila Amolo Odinga -->
                         <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
@@ -464,8 +475,7 @@
                                 <h3 class="text-white text-3xl font-bold mb-2 font-sans">CGH. Raila Amolo Odinga </h3>
                                 <div class="flex items-center gap-2 mb-4">
                                     <div class="w-10 h-0.5 bg-orange-500"></div>
-                                    <p class="text-orange-500 font-bold uppercase tracking-widest text-xs">Founder ODM Party -1ST Party Leader (Died on 15 October 2025
-</p>
+                                    <p class="text-orange-500 font-bold uppercase tracking-widest text-xs">Founder ODM Party -1ST Party Leader (Died on 15 October 2025)</p>
                                 </div>
                                 <p class="text-gray-300 text-sm italic leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
                                     "We stand firm in our resolve to build a democratic and inclusive nation."
@@ -473,7 +483,7 @@
                             </div>
                         </div>
 
-                             <!-- Leader 3: Hon. Dr.Oburu Oginga -->
+                        <!-- Leader 3: Hon. Dr.Oburu Oginga -->
                         <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
                             <img src="{{ asset('images/oburu.jpeg') }}" alt="Current Party Leader - ODM" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
@@ -490,7 +500,6 @@
                             </div>
                         </div>
                      
-                           
                         <!-- Leader 2: Hon. Oduor Ongwen -->
                         <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
                             <img src="{{ asset('images/Hon. Oduor Ongwen- Executive Director ODM party.jpeg') }}" alt="Executive Director" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
@@ -508,7 +517,7 @@
                             </div>
                         </div>
                         
-                              <!-- Leader 2: Hon.Gladys Wanga -->
+                        <!-- Leader 2: Hon.Gladys Wanga -->
                         <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
                             <img src="{{ asset('images/gladys.jpeg') }}" alt="National Chairperson -ODM" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
@@ -525,9 +534,7 @@
                             </div>
                         </div>
                      
-                      
-                        
-                          <!-- Leader 2: Hon . Edwin sifuna -->
+                        <!-- Leader 2: Hon . Edwin sifuna -->
                         <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
                             <img src="{{ asset('images/sifuna.jpeg') }}" alt="Secretary General - ODM" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
@@ -543,7 +550,29 @@
                                 </p>
                             </div>
                         </div>
-                           <!-- Leader 8: Patron -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- OCC Leadership Section -->
+            <section id="leadership" class="py-24 bg-[#0a0f1c] relative overflow-hidden">
+                <!-- Background Decorative Elements -->
+                <div class="absolute top-0 left-0 w-full h-full scale-x-[-1]">
+                    <div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[120px]"></div>
+                    <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-orange-900/5 rounded-full blur-[120px]"></div>
+                </div>
+
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="text-center mb-16">
+                        <span class="text-blue-500 font-black text-xs uppercase tracking-[0.4em] mb-4 block">Chapter Officials</span>
+                        <h2 class="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-none">
+                            OCC <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Leadership</span>
+                        </h2>
+                        <div class="w-24 h-1.5 bg-blue-500 mx-auto mt-8 rounded-full"></div>
+                    </div>
+
+                    <div class="flex flex-wrap justify-center gap-10">
+                        <!-- Leader 8: Patron -->
                         <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/10 transition-all duration-700 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(100,116,139,0.4)] cursor-pointer">
                             <img src="{{ asset('images/Nasra.jpeg') }}" alt="IT Team" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
@@ -560,7 +589,7 @@
                             </div>
                         </div>
                         
-                           <!-- Leader 3 Mr. Gerald Owuor -->
+                        <!-- Leader 3 Mr. Gerald Owuor -->
                         <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
                             <img src="{{ asset('images/ODM_Comrades_Chapter_National_Chairperson_Gerald_Ogalo.jpeg') }}" alt="National Chairperson" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
@@ -577,7 +606,7 @@
                             </div>
                         </div>
                         
-                           <!-- Leader 3: Grace Nafula Wekesa -->
+                        <!-- Leader 3: Grace Nafula Wekesa -->
                         <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
                             <img src="{{ asset('images/grace.jpeg') }}" alt="National Vice Chairperson OCC" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
@@ -593,10 +622,6 @@
                                 </p>
                             </div>
                         </div>
-
-                        
-                        
-                        
 
                         <!-- Leader 4: Hannington Oguk -->
                         <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
@@ -632,7 +657,7 @@
                             </div>
                         </div>
                         
-                         <!-- Leader 6: Biko Shanton Omondi -->
+                        <!-- Leader 6: Biko Shanton Omondi -->
                         <div class="relative w-full md:w-80 h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 transition-all duration-700 hover:scale-[1.02] cursor-pointer bg-slate-900">
                             <img src="{{ asset('images/biko.jpeg') }}" alt="Deputy -Communications director. " class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
@@ -682,13 +707,6 @@
                                 </p>
                             </div>
                         </div>
-
-                       
-
-
-                        
-
-                      
                     </div>
                 </div>
             </section>
@@ -1105,7 +1123,16 @@
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 
-                // Slideshow logic removed (No items found)
+                // Restored Slideshow logic
+                const slides = document.querySelectorAll('.slide');
+                if (slides.length > 0) {
+                    let currentSlide = 0;
+                    setInterval(() => {
+                        slides[currentSlide].style.opacity = 0;
+                        currentSlide = (currentSlide + 1) % slides.length;
+                        slides[currentSlide].style.opacity = 1;
+                    }, 6000); // 6 seconds per slide
+                }
                 
                 // Gallery Filter Functionality
                 const filterBtns = document.querySelectorAll('.filter-btn');
