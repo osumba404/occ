@@ -45,7 +45,7 @@
             justify-content: center;
             position: relative;
             z-index: 10;
-            clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 92% 100%, 0% 100%);
             padding-right: 5%;
         }
 
@@ -57,8 +57,18 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            margin-left: -10%;
+            margin-left: -5%;
             z-index: 5;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 420px;
+            padding: 3rem 2rem;
+            animation: fadeIn 0.6s ease-out;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
         .branding-content {
@@ -95,13 +105,8 @@
             opacity: 0.9;
         }
 
-        /* Login Form Styling */
+        /* Wizard Form Styling */
         .login-container {
-            width: 100%;
-            max-width: 420px;
-            padding: 2rem;
-            animation: fadeIn 0.6s ease-out;
-        }
 
         .form-header {
             margin-bottom: 2.5rem;
@@ -178,14 +183,13 @@
             font-weight: 700;
             cursor: pointer;
             transition: all 0.2s ease;
-            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             margin-top: 1rem;
         }
 
         .button-primary:hover {
             background: #ea580c;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(249, 115, 22, 0.4);
+            filter: brightness(1.1);
         }
 
         .button-primary:active {
