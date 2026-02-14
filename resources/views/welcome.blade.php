@@ -266,122 +266,78 @@
                 </div>
             </div>
             
-            <!-- Mobile menu -->
-            <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-                <div class="px-2 pt-2 pb-3 space-y-1">
-                    <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-md">About</a>
-                    <a href="#leadership" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-md">Leadership</a>
+            <!-- Mobile Navigation Overlay & Drawer (Brand Correct Refinement) -->
+            <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] hidden transition-opacity duration-400 opacity-0"></div>
+            
+            <div id="mobile-menu-drawer" class="fixed top-0 left-0 h-full w-[85%] max-w-sm bg-blue-950 z-[70] transform -translate-x-full transition-transform duration-400 ease-out flex flex-col shadow-2xl overflow-hidden">
+                <!-- Drawer Header: Centered Identity -->
+                <div class="p-8 flex flex-col items-center border-b border-white/5 relative bg-white/5">
+                    <button id="mobile-menu-close" class="absolute top-4 right-4 p-2 text-white/50 hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
                     
-                    <!-- Mobile Events Section -->
-                    <div class="mobile-events-section">
-                        <button id="mobile-events-toggle" class="w-full flex items-center justify-between px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-md">
-                            <span>Events</span>
-                            <svg id="mobile-events-arrow" class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <div id="mobile-events-list" class="hidden pl-6 pr-3 py-2 space-y-1">
-                            <button class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-gray-50 rounded-md event-item-btn"
-                                    data-title="Coast Chapter (Mombasa)" 
-                                    data-date="February 17, 2026"
-                                    data-location="Mombasa, Kilifi, Kwale, Taita Taveta"
-                                    data-venue="Tononoka Hall Mombasa"
-                                    data-attendees="1000 students (From Mombasa, Kilifi, Kwale, Taita Taveta)"
-                                    data-theme="&quot;From Campus to Country: Reawakening ODM Ideology Among Students&quot;">
-                                Coast Chapter - Feb 17
-                            </button>
-                            <button class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-gray-50 rounded-md event-item-btn"
-                                    data-title="Nakuru Chapter"
-                                    data-date="February 23, 2026"
-                                    data-venue="TBD"
-                                    data-theme="Regional Mobilization"
-                                    data-attendees="Students from Nakuru Region">
-                                Nakuru Chapter - Feb 23
-                            </button>
-                            <button class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-gray-50 rounded-md event-item-btn"
-                                    data-title="Narok Chapter"
-                                    data-date="February 24, 2026"
-                                    data-venue="TBD"
-                                    data-theme="Grassroots Activation"
-                                    data-attendees="Students from Narok Region">
-                                Narok Chapter - Feb 24
-                            </button>
-                            <button class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-gray-50 rounded-md event-item-btn"
-                                    data-title="Kisumu Chapter (Nyanza)"
-                                    data-date="March 4, 2026"
-                                    data-location="Homa Bay, Migori, Kisumu, Siaya"
-                                    data-venue="TBD"
-                                    data-theme="Strategy & Consolidation"
-                                    data-attendees="Students from Nyanza Region">
-                                Kisumu Chapter - Mar 4
-                            </button>
-                            <button class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-gray-50 rounded-md event-item-btn"
-                                    data-title="Kakamega Chapter (Western)"
-                                    data-date="March 5, 2026"
-                                    data-venue="TBD"
-                                    data-theme="Western Region Activation"
-                                    data-attendees="Students from Western Region">
-                                Kakamega Chapter - Mar 5
-                            </button>
-                            <button class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-gray-50 rounded-md event-item-btn"
-                                    data-title="Eldoret Chapter (Rift Valley)"
-                                    data-date="April 9, 2026"
-                                    data-venue="TBD"
-                                    data-theme="Rift Valley Engagement"
-                                    data-attendees="Students from Rift Valley">
-                                Eldoret Chapter - Apr 9
-                            </button>
-                            <button class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-gray-50 rounded-md event-item-btn"
-                                    data-title="Eastern & N.E Chapter"
-                                    data-date="April 30, 2026"
-                                    data-venue="TBD"
-                                    data-theme="Regional Outreach"
-                                    data-attendees="Students from Eastern & NE Region">
-                                Eastern & N.E - Apr 30
-                            </button>
-                            <button class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-gray-50 rounded-md event-item-btn"
-                                    data-title="Central Kenya Chapter (Nyeri)"
-                                    data-date="May 13, 2026"
-                                    data-venue="TBD"
-                                    data-theme="Mountain Region Launch"
-                                    data-attendees="Students from Central Region">
-                                Central Kenya - May 13
-                            </button>
-                            <button class="w-full text-left px-3 py-2 text-sm text-orange-600 hover:text-orange-700 hover:bg-orange-50 rounded-md font-semibold event-item-btn"
-                                    data-title="ODM COMRADES CHAPTER MEGALAUNCH"
-                                    data-date="May 29, 2026"
-                                    data-venue="TBD"
-                                    data-theme="National Launch"
-                                    data-attendees="All Chapters">
-                                MEGALAUNCH - May 29
-                            </button>
-                            <button class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-gray-50 rounded-md event-item-btn"
-                                    data-title="Kisii & Nyamira Chapter"
-                                    data-date="June 19, 2026"
-                                    data-venue="TBD"
-                                    data-theme="Regional Activation"
-                                    data-attendees="Students from Kisii & Nyamira">
-                                Kisii & Nyamira - Jun 19
-                            </button>
+                    <img src="{{ asset('images/logo.jpeg') }}" alt="ODM Logo" class="h-24 w-auto mb-4 rounded-full border-4 border-white/10 shadow-xl">
+                    <div class="text-center">
+                        <span class="block text-xl font-black tracking-tighter text-white leading-tight">ODM COMRADES</span>
+                        <span class="block text-xs font-bold text-orange-500 uppercase tracking-widest mt-1">Movement Chapter</span>
+                    </div>
+                </div>
+
+                <!-- Drawer Content -->
+                <div class="flex-1 overflow-y-auto px-6 py-10 flex flex-col items-center space-y-8">
+                    <nav class="w-full flex flex-col items-center space-y-8">
+                        <a href="{{ url('/') }}" class="text-2xl font-black text-white hover:text-orange-500 transition-colors uppercase tracking-tighter">Home</a>
+                        <a href="#about" class="text-2xl font-black text-white hover:text-orange-500 transition-colors uppercase tracking-tighter">About Us</a>
+                        <a href="#celebrations" class="text-2xl font-black text-white hover:text-orange-500 transition-colors uppercase tracking-tighter">Events</a>
+                        <a href="#campus" class="text-2xl font-black text-white hover:text-orange-500 transition-colors uppercase tracking-tighter">Campus</a>
+                        <a href="#youth" class="text-2xl font-black text-white hover:text-orange-500 transition-colors uppercase tracking-tighter">Youth</a>
+                        <a href="#contact" class="text-2xl font-black text-white hover:text-orange-500 transition-colors uppercase tracking-tighter">Contact</a>
+                    </nav>
+
+                    <!-- Events Section - Clean & Brand Correct -->
+                    <div class="w-full space-y-4 pt-10 border-t border-white/5">
+                        <p class="text-orange-500 text-[10px] font-bold uppercase tracking-[0.4em] text-center mb-6">Upcoming Events</p>
+                        <div class="space-y-6">
+                            @php
+                                $mobileEvents = [
+                                    ['title' => 'Coast Chapter', 'date' => 'Feb 17', 'loc' => 'Mombasa'],
+                                    ['title' => 'Nakuru Chapter', 'date' => 'Feb 23', 'loc' => 'Nakuru'],
+                                    ['title' => 'MEGALAUNCH', 'date' => 'May 29', 'loc' => 'National', 'important' => true]
+                                ];
+                            @endphp
+                            @foreach($mobileEvents as $event)
+                                <div class="flex flex-col items-center text-center group cursor-pointer">
+                                    <span class="text-base font-black uppercase tracking-tight {{ isset($event['important']) ? 'text-orange-500' : 'text-white' }} group-hover:text-orange-500 transition-colors">{{ $event['title'] }}</span>
+                                    <div class="flex items-center gap-2 mt-1">
+                                        <span class="text-[10px] font-bold text-white/40 uppercase tracking-widest">{{ $event['date'] }}</span>
+                                        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                                        <span class="text-[10px] font-bold text-white/40 uppercase tracking-widest">{{ $event['loc'] }}</span>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
-                    
-                    <a href="#celebrations" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-md">Celebrations</a>
-                    <a href="#campus" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-md">Campus</a>
-                    <a href="#youth" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-md">Youth</a>
-                    @if (Route::has('register'))
-                        @auth
-                            <a href="{{ url('/dashboard') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-md">Dashboard</a>
-                        @else
-                            <a href="{{ route('login') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-md">Log in</a>
 
-                            @if (Route::has('membership'))
-                                <a href="{{ route('membership') }}" class="block px-3 py-2 text-base font-medium text-white hover:bg-orange-700 rounded-md" style="background-color: #fb923c;">
-                                    Register
-                                </a>
-                            @endif
-                        @endauth
-                    @endif
+                    <!-- Membership Actions -->
+                    <div class="w-full pt-10">
+                        @if (Route::has('register'))
+                            @auth
+                                <a href="{{ url('/dashboard') }}" class="block w-full py-4 bg-blue-700 text-center text-white font-black uppercase text-lg tracking-tight hover:bg-blue-600 transition-colors">DASHBOARD</a>
+                            @else
+                                <a href="{{ route('membership') }}" class="block w-full py-5 bg-orange-500 text-center text-white font-black uppercase text-xl tracking-tight hover:bg-orange-600 shadow-[0_10px_30px_rgba(249,115,22,0.3)] transition-transform active:scale-95 mb-6 text-white no-underline">JOIN THE MOVEMENT</a>
+                                <a href="{{ route('login') }}" class="block w-full text-center text-white/50 font-bold uppercase text-xs hover:text-orange-500 transition-colors tracking-widest no-underline">Login</a>
+                            @endauth
+                        @endif
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="p-8 border-t border-white/5 text-center mt-auto bg-black/20">
+                    <p class="text-[10px] text-white/20 uppercase font-bold tracking-[0.4em]">
+                        &copy; {{ date('Y') }} ODM COMRADES
+                    </p>
                 </div>
             </div>
         </nav>
@@ -402,30 +358,42 @@
                     <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-blue-900/60"></div>
                 </div>
                 
-                <!-- Hero Content -->
-                <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-24 text-center">
-                    <h1 class="text-3xl sm:text-4xl tracking-tight font-extrabold md:text-5xl lg:text-6xl mb-4 sm:mb-6">
-                        <span class="block text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Welcome to</span>
-                        <span class="block text-orange-500" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">ODM Comrades Chapter</span>
-                    </h1>
-                    <p class="mt-3 max-w-xs sm:max-w-md mx-auto text-sm sm:text-base md:text-lg lg:text-xl md:max-w-2xl lg:max-w-3xl text-white" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
-                       Empowering the youth and comrades through the Orange Democratic Movement. Join the movement to champion for reputable leadership, inclusivity, and progressive change.
-                    </p>
-                    
-                    @if (Route::has('membership'))
-                    <div class="mt-6 sm:mt-8 max-w-md mx-auto sm:flex sm:justify-center gap-2 sm:gap-4">
-                        <div class="rounded-md shadow-lg flex-1 sm:flex-none">
-                            <a href="{{ route('membership') }}" class="w-full flex items-center justify-center px-4 sm:px-6 lg:px-8 py-3 border border-transparent text-sm sm:text-base font-medium rounded-md text-white hover:bg-orange-600 transition duration-150 ease-in-out" style="background-color: #fb923c;">
-                                Join the Movement
+                <!-- Film Grain Overlay for Non-AI Texture -->
+                <div class="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none" style="background-image: url('https://grainy-gradients.vercel.app/noise.svg'); filter: contrast(150%) brightness(100%);"></div>
+
+                <!-- Hero Content: Editorial Architectural Layout -->
+                <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <div class="inline-block mb-10">
+                            <h1 class="hero-editorial-stack leading-tight">
+                                <span class="hero-intro-serif block italic mb-2">
+                                    <span class="decorative-w">W</span>elcome to
+                                </span>
+                                <span class="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-orange-500 hero-pressed-text">
+                                    ODM Comrades Chapter
+                                </span>
+                            </h1>
+                            <!-- Architectural Accent Line -->
+                            <div class="mt-8 flex justify-center">
+                                <div class="w-16 h-[1px] bg-orange-500/60"></div>
+                            </div>
+                        </div>
+                        
+                        <p class="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-white/90 font-medium leading-relaxed tracking-tight" style="text-shadow: 1px 1px 0px rgba(0,0,0,0.8);">
+                            Empowering the youth and comrades through the Orange Democratic Movement. Join the movement to champion for reputable leadership, inclusivity, and progressive change.
+                        </p>
+                        
+                        @if (Route::has('membership'))
+                        <div class="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6">
+                            <a href="{{ route('membership') }}" class="w-full sm:w-auto px-10 py-5 bg-orange-500 hover:bg-orange-600 text-white font-black text-xl lg:text-2xl rounded-none transition-all duration-300 transform hover:-translate-y-2 shadow-[0_20px_50px_rgba(234,88,12,0.3)]">
+                                JOIN THE MOVEMENT
+                            </a>
+                            <a href="{{ route('login') }}" class="w-full sm:w-auto px-10 py-5 bg-[#1e40af] hover:bg-[#1e3a8a] text-white font-black text-xl lg:text-2xl rounded-none transition-all duration-300 transform hover:-translate-y-2 shadow-[0_20px_50px_rgba(30,64,175,0.3)]">
+                                LOG IN
                             </a>
                         </div>
-                        <div class="mt-3 sm:mt-0 sm:ml-3 flex-1 sm:flex-none">
-                             <a href="{{ route('login') }}" class="w-full flex items-center justify-center px-4 sm:px-6 lg:px-8 py-3 border border-transparent text-sm sm:text-base font-medium rounded-md text-white hover:bg-blue-700 transition duration-150 ease-in-out" style="background-color: #1e40af;">
-                                Log In
-                            </a>
-                        </div>
+                        @endif
                     </div>
-                    @endif
                 </div>
             </section>
 
@@ -1185,145 +1153,41 @@
         <!-- JavaScript for Animations -->
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                // Mobile Menu Toggle
+                // Mobile Menu Improved Toggle Logic
                 const mobileMenuButton = document.getElementById('mobile-menu-button');
-                const mobileMenu = document.getElementById('mobile-menu');
+                const mobileMenuClose = document.getElementById('mobile-menu-close');
+                const mobileOverlay = document.getElementById('mobile-menu-overlay');
+                const mobileDrawer = document.getElementById('mobile-menu-drawer');
 
-                if (mobileMenuButton && mobileMenu) {
-                    mobileMenuButton.addEventListener('click', function() {
-                        mobileMenu.classList.toggle('hidden');
-                    });
+                function openMobileMenu() {
+                    if (!mobileOverlay || !mobileDrawer) return;
+                    mobileOverlay.classList.remove('hidden');
+                    setTimeout(() => {
+                        mobileOverlay.classList.remove('opacity-0');
+                        mobileOverlay.classList.add('opacity-100');
+                        mobileDrawer.classList.remove('-translate-x-full');
+                        mobileDrawer.classList.add('translate-x-0');
+                    }, 5);
                 }
 
-                // Events Dropdown Toggle
-                const eventsButton = document.getElementById('events-button');
-                const eventsMenu = document.getElementById('events-menu');
-                const eventsArrow = document.getElementById('events-arrow');
+                function closeMobileMenu() {
+                    if (!mobileOverlay || !mobileDrawer) return;
+                    mobileOverlay.classList.remove('opacity-100');
+                    mobileOverlay.classList.add('opacity-0');
+                    mobileDrawer.classList.remove('translate-x-0');
+                    mobileDrawer.classList.add('-translate-x-full');
+                    setTimeout(() => {
+                        mobileOverlay.classList.add('hidden');
+                    }, 400);
+                }
 
-                if (eventsButton && eventsMenu) {
-                    eventsButton.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        // Close lightbox if open
-                        const lightbox = document.querySelector('.lightbox-modal');
-                        if (lightbox && lightbox.style.display === 'block') {
-                            lightbox.style.display = 'none';
-                        }
-                        
-                        const isHidden = eventsMenu.classList.contains('hidden');
-                        
-                        if (isHidden) {
-                            eventsMenu.classList.remove('hidden');
-                            setTimeout(() => {
-                                eventsMenu.classList.remove('opacity-0', 'scale-95');
-                                eventsMenu.classList.add('opacity-100', 'scale-100');
-                                eventsArrow.classList.add('rotate-180');
-                            }, 10);
-                        } else {
-                            eventsMenu.classList.remove('opacity-100', 'scale-100');
-                            eventsMenu.classList.add('opacity-0', 'scale-95');
-                            eventsArrow.classList.remove('rotate-180');
-                            setTimeout(() => {
-                                eventsMenu.classList.add('hidden');
-                            }, 200);
-                        }
-                    });
+                if (mobileMenuButton) mobileMenuButton.addEventListener('click', openMobileMenu);
+                if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu);
+                if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
 
-                    // Close dropdown when clicking outside
-                    document.addEventListener('click', (e) => {
-                        if (!eventsButton.contains(e.target) && !eventsMenu.contains(e.target)) {
-                            eventsMenu.classList.remove('opacity-100', 'scale-100');
-                            eventsMenu.classList.add('opacity-0', 'scale-95');
-                            eventsArrow.classList.remove('rotate-180');
-                            setTimeout(() => {
-                                eventsMenu.classList.add('hidden');
-                            }, 200);
-                        }
-                    });
-                }
-                
-                // Event Modal Functionality
-                const eventModal = document.getElementById('event-modal');
-                const eventModalClose = document.getElementById('event-modal-close');
-                const eventBtns = document.querySelectorAll('.event-item-btn');
-                
-                if (eventModal && eventBtns.length > 0) {
-                    // Open Modal
-                    eventBtns.forEach(btn => {
-                        btn.addEventListener('click', function(e) {
-                            e.stopPropagation(); // Prevent closing dropdown immediately
-                            
-                            // Get data
-                            const title = this.getAttribute('data-title');
-                            const date = this.getAttribute('data-date');
-                            const venue = this.getAttribute('data-venue');
-                            const theme = this.getAttribute('data-theme');
-                            const attendees = this.getAttribute('data-attendees');
-                            
-                            // Populate Modal
-                            document.getElementById('modal-event-title').textContent = title;
-                            document.getElementById('modal-event-date').textContent = date;
-                            document.getElementById('modal-event-venue').textContent = venue || 'TBD';
-                            document.getElementById('modal-event-theme').textContent = theme || 'No theme specified';
-                            document.getElementById('modal-event-attendees').textContent = attendees || 'TBD';
-                            
-                            // Show Modal
-                            eventModal.classList.remove('hidden');
-                            // Close dropdown
-                            eventsMenu.classList.remove('opacity-100', 'scale-100');
-                            eventsMenu.classList.add('opacity-0', 'scale-95');
-                            eventsArrow.classList.remove('rotate-180');
-                            setTimeout(() => {
-                                eventsMenu.classList.add('hidden');
-                            }, 200);
-                        });
-                    });
-                    
-                    // Close Modal
-                    eventModalClose.addEventListener('click', function() {
-                        eventModal.classList.add('hidden');
-                    });
-                    
-                    // Close on outside click
-                    eventModal.addEventListener('click', function(e) {
-                        if (e.target === eventModal) {
-                            eventModal.classList.add('hidden');
-                        }
-                    });
-                }
-                
-                
-                // Mobile Events Toggle
-                const mobileEventsToggle = document.getElementById('mobile-events-toggle');
-                const mobileEventsList = document.getElementById('mobile-events-list');
-                const mobileEventsArrow = document.getElementById('mobile-events-arrow');
-                
-                if (mobileEventsToggle && mobileEventsList) {
-                    mobileEventsToggle.addEventListener('click', function() {
-                        const isHidden = mobileEventsList.classList.contains('hidden');
-                        
-                        if (isHidden) {
-                            mobileEventsList.classList.remove('hidden');
-                            mobileEventsArrow.classList.add('rotate-180');
-                        } else {
-                            mobileEventsList.classList.add('hidden');
-                            mobileEventsArrow.classList.remove('rotate-180');
-                        }
-                    });
-                }
-                
-                // Close mobile menu when clicking on links
-                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-                mobileMenuLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        mobileMenu.classList.add('hidden');
-                    });
-                });
-                
-                // Close mobile menu when clicking outside
-                document.addEventListener('click', function(event) {
-                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
-                        mobileMenu.classList.add('hidden');
-                    }
+                // Close drawer on link clicks
+                document.querySelectorAll('#mobile-menu-drawer a').forEach(link => {
+                    link.addEventListener('click', closeMobileMenu);
                 });
                 
                 // Slideshow functionality - Gentle fade transitions
@@ -1481,6 +1345,53 @@
         </script>
         
         <style>
+            /* Editorial & Architectural Materiality */
+            @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,600&display=swap');
+
+            .hero-intro-serif {
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 2.5rem;
+                font-weight: 300;
+                color: rgba(255,255,255,0.9);
+                letter-spacing: -0.02em;
+            }
+
+            .decorative-w {
+                position: relative;
+                display: inline-block;
+                font-weight: 700;
+                font-size: 1.3em;
+                margin-right: -0.05em;
+                /* High-Contrast Stamped Metal Palette matching the "R" */
+                background: linear-gradient(
+                    165deg, 
+                    #150500 0%, 
+                    #ea580c 40%, 
+                    #ffffff 50%, 
+                    #fb923c 65%, 
+                    #100400 100%
+                );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                /* Sharp Pressed Rim Highlight */
+                filter: drop-shadow(1.5px 1.5px 0px rgba(255,255,255,0.9));
+            }
+
+            .hero-pressed-text {
+                /* Double-Offset Pressed Depth (Non-AI vibe) */
+                text-shadow: 
+                    1px 1px 0px rgba(0,0,0,0.8),
+                    2px 2px 0px rgba(0,0,0,0.4);
+            }
+
+            /* Clean Editorial Balance */
+            .hero-editorial-stack {
+                filter: drop-shadow(0 4px 20px rgba(0,0,0,0.3));
+            }
+
+            /* Strip Generic Effects */
+            .hero-glass-panel, .hero-chapter-glow, .hero-title-main, .hero-editorial-title, .hero-title-refined { display: none; }
+
             /* Masonry Gallery Layout */
             .masonry-gallery {
                 column-count: 1;

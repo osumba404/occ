@@ -221,32 +221,33 @@
         /* Responsive Fix - No Logo Clipping */
         @media (max-width: 1024px) {
             .page-container {
-                flex-direction: column;
+                flex-direction: column !important;
+                display: flex !important;
             }
 
             .branding-section {
-                width: 100%;
-                height: 45vh;
-                clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
-                padding-right: 0;
+                width: 100% !important;
+                height: 35vh !important;
+                clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%) !important;
+                padding-right: 0 !important;
                 padding-bottom: 2rem;
-                flex: none;
+                flex: none !important;
             }
 
             .form-section {
-                width: 100%;
-                margin-left: 0;
-                margin-top: -5vh;
-                padding: 3rem 1.5rem;
-                flex: none;
+                width: 100% !important;
+                margin-left: 0 !important;
+                margin-top: -5vh !important;
+                padding: 2rem 1rem !important;
+                flex: none !important;
             }
 
             .branding-title {
-                font-size: 2.5rem;
+                font-size: 2.25rem;
             }
 
             .logo-img {
-                height: 160px;
+                height: 120px;
             }
         }
     </style>
@@ -266,7 +267,7 @@
         <div class="form-section">
             <div class="login-container">
                 <div class="form-header">
-                    <h2>Member Login</h2>
+                    <h2>Login</h2>
                     <p>Enter your details to access your portal</p>
                 </div>
 
